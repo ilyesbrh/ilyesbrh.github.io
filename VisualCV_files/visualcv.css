@@ -11180,7 +11180,8 @@ body #hs-beacon {
 }
 
 .cv-container .banner {
-    background-image: url(/themes/verge/images/diagonal-left.png), url(/images/textures/black20.png), url(https://s3.amazonaws.com/workstory/images/verge.jpg);
+    background-image: url(./diagonal-left.png), url(./black20.png), url(https://s3.amazonaws.com/workstory/images/verge.jpg);
+    border-radius: 3px;
     background-color: transparent;
     background-size: 5px, 5px, cover;
     background-repeat: repeat, repeat, no-repeat;
