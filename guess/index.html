@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body style="display: flex;justify-content: center;align-items: center">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <input id="inp" type="text" style="margin-bottom: 50px;width: 300px;">
+        <button id="guess">guess me</button>
+        <script async defer>
+            var n = Math.floor(Math.random() * 10); 
+            document.getElementById('guess').click = ()=>{
+                if(document.getElementById('inp').value === n){
+                    alert('congrats')
+                }else{
+                    alert('false :(');
+                }
+                n = Math.floor(Math.random() * 10);
+            }
+        </script>
+    </body>
+</html>
