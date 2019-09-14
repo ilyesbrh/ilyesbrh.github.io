@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tetris</title>
+    <link href="css/ccss/StyleTheme.css" rel="stylesheet" type="text/css" >
+    <link href="css/ccss/Board_Page.css" rel="stylesheet" type="text/css" />
+    <link href="css/ccss/Opening_Animation.css" rel="stylesheet" type="text/css" />
+    <link href="css/ccss/MenuPauseStyle.css" rel="stylesheet" type="text/css" />
+    <link href="css/style_com.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body style="background-color: darkblue">
+<audio id="audio" src="js/audio/audio7.mp3"></audio>
+
+<div id="side" style="position: absolute"><div id="sea"></div></div>
+<canvas id="canvas" style="position: fixed;">Canvas is not supported in your browser.</canvas>
+
+<div id="SonBar" style="position: fixed;left: 0%;top: 1%;" >
+    <div id="vol">
+        <img src="img/listen-icon.png" >
+    </div>
+
+    <div id="vol_plus">
+        <img src="img/plus.png" >
+    </div>
+
+    <div id="vol_moins">
+        <img src="img/moins.png" >
+    </div>
+
+</div>
+<p style="display: none;visibility: hidden;position: absolute;" id="userName"></p>
+<h1 style="position:absolute;margin-left: 120px;margin-top: 80px ;">
+</h1>
+<div id="ps"><div id="PauseIcone" style="position: fixed;left: 48%; z-index: 999;"></div></div>
+
+
+<div style="position: fixed;left: 40%;">
+
+    <div id="head">
+
+        <div id="AllMenu" style="height: 80%">
+            <div class="ContainerPause">
+                <!-- ADDED BY BOUBRED ------>
+                <div id="StartMessageContainer">
+                    <h1 id="StartMessage"> Ready !</h1>
+                </div>
+                <!-------------------------->
+                <ul id="MenuPause" style="position: fixed;top: 10%;left: 37.5%;">
+                    <!-- <li id="ModeNormal"> MODE NORMAL </li>
+                    <li id="ModeBlocks"> MODE BLOCKS </li> -->
+                    <li id="ReprendreBtn"> REPRENDRE </li>
+                    <li id="RecommencerBtn"> RECOMMENCER PARTIE </li>
+                    <li id="AideBtn"> AIDE </li>
+                    <li id="Options"> OPTIONS</li>
+                    <li id="UsersScoresBtn"> SCORES UTILISATEURS</li>
+                    <!-- <li id="UsersScoresBtn"> SCORES UTILISATEURS</li>
+                    <li id="MenuPrincipale"> MENU PRINCIPALE </li> -->
+                    <li id="QuitterMP"> QUITTER </li>
+                </ul>
+                <table id="UsersScores" style="position: absolute; top: 20px; z-index: 3;">
+                    <tr>
+                        <th> Nom de l'utilisateur </th>
+                        <th> Meilleur score </th>
+                    </tr>
+
+                    <tr>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label id="RetourUsersScores"> Retour </label>
+                        </td>
+                    </tr>
+                </table>
+                <div id="AideMenu" style="position: fixed;left: 25%;top: 10%">
+                    <div>
+                        <label style="position: absolute;left: 7%;color: silver;font-size: 15px;">AIDE</label>
+                        <div id="RetourAide"><img src="img/close.png" style="width: 10%;height: 15%;position: absolute;left: -5%;top: -5%;"></div>
+                        <div><img src="img/left4.png"  style="position: absolute;left: 26.6%;top: 17.4%;height: 11%;width: 11.5%;"></div>
+                        <div><img src="img/down4.png" style="position: absolute;left: 40.9%;top: 17.4%;height: 11%;width: 11.5%;"></div>
+                        <div><img src="img/right4.png" style="position: absolute;left: 55.6%;top: 17.4%;height: 11%;width: 11.5%;"></div>
+                        <div><img src="img/up4.png"  style="position: absolute;left: 40.9%;top: 3.8%;height: 11%;width: 11.5%;"></div>
+                        <div><img src="img/macbook.png"  style="position: absolute;left: 13.5%;top: 34%;height:45%;width: 66%;"></div>
+                        <div>
+                            <img id="macimg" src="img/clk.gif" style="position: absolute;left: 21.7%;top: 36.8%;height:34.5%;width: 49.4%;border: 1px solid white; ">
+                        </div>
+                        <div><img src="img/espace_btn.png" style="position: absolute;left: 11%;top: 85%;height: 12%;width: 45%;"></div>
+                        <div><img src="img/p.png" style="position: absolute;left: 60%;top: 85%;height: 12%;width: 12%;"></div>
+                        <div><img src="img/j.png" style="position: absolute;left: 76%;top: 85%;height: 12%;width: 12%;"></div>
+                        <div><img src="img/logo33.jpg" style="position: absolute;right: 1%;top: 1%;height: 9%;width: 12%;"></div>
+                        <div class="aid_btn"  style="position: absolute;left: 26.6%;top: 17.4%;height: 9%;width: 9.5%;"></div>
+                        <div class="aid_btn"  style="position: absolute;left: 40.9%;top: 17.4%;height: 9%;width: 9.5%;"></div>
+                        <div class="aid_btn"  style="position: absolute;left: 55.6%;top: 17.4%;height: 9%;width: 9.5%;"></div>
+                        <div class="aid_btn"  style="position: absolute;left: 40.9%;top: 3.8%;height: 9%;width: 9.5%;"></div>
+                        <div class="aid_btn"  style="position: absolute;left: 59.5%;top: 84.6%;height: 11%;width: 11.5%;"></div>
+                        <div class="aid_btn"  style="position: absolute;left: 75.5%;top: 84.6%;height: 11%;width: 11.2%;"></div>
+                        <div class="aid_btn"  style="position: absolute;left: 10.6%;top: 84.6%;height: 11%;width: 44%;"></div>
+                    </div>
+                </div>
+                <!-- <table id="AideMenu">
+                    <tr>
+                        <th> Touche </th>
+                        <th> Fonction </th>
+                    </tr>
+                    <tr>
+                        <td> → </td>
+                        <td> Deplacer latéralement à droite </td>
+                    </tr>
+                    <tr>
+                        <td> ← </td>
+                        <td> Deplacer latéralement à gauche </td>
+                    </tr>
+                    <tr>
+                        <td> ↑ </td>
+                        <td> Faire une rotation de 90° </td>
+                    </tr>
+                    <tr>
+                        <td> ↓ </td>
+                        <td> Accelerer la chute de la pièce  </td>
+                    </tr>
+                    <tr>
+                        <td> Space </td>
+                        <td> Chutter la pièce instantanément  </td>
+                    </tr>
+                    <tr>
+                        <td> P </td>
+                        <td> Pauser le jeu </td>
+                    </tr>
+                    <tr>
+                        <td> J </td>
+                        <td> Utiliser le Joker  </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label id="RetourAide"> Retour </label>
+                        </td>
+                    </tr>
+                </table> -->
+                <div id="finPartieContainer">
+                    <label id="finPartie"> FIN DE LA PARTIE </label>
+                    <button id="rejouer" onclick="ReplayGO();" class="btn"> REJOUER </button>
+                    <button id="MenuPrincipalGOver" onclick="PrincipalMenuGO();" class="btn"> MENU PRINCIPAL </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="containerTheme">
+        <div class="infos1" style="position: fixed;left: 0%;">
+            <h2> <label> Lignes</label> </h2>
+            <h3> <label id="Lignes"> 0</label> </h3>
+            <br>
+            <h2> <label> Score</label> </h2>
+            <h3> <label id="score">0</label> </h3>
+            <br>
+            <h2> <label>  Buts </label>  </h2>
+            <h3> <label id="but"> 0 </label>  </h3>
+        </div>
+        <div id="cadre" style="position: fixed;top: 10%;">
+            <!-- LE CANEVAS DE LA GRILLE SERA INSERER ICI -->
+            <div id="canvasContainer"><canvas id="Grille"   height="593px" width="270px" style="visibility: visible;" ></canvas> </div>
+        </div>
+        <div class="infos2" style="position: fixed;right: 20%;">
+            <div id="temp" class="container">
+                <h1> Temps restant </h1>
+                <h2 id="time">30'</h2>
+            </div>
+            <h2> <label>Niveau</label> </h2>
+            <h3> <label id="niveau">0</label> </h3>
+            <br>
+
+
+            <div class="nextTetromino">
+                <!--  LE CANEVAS DES TETs Prochaines SERA INSERER ICI -->
+                <canvas id="Tetro_Suivant" height= "100px" width="110px"></canvas>
+            </div>
+            <div class="joker" id="joker" >
+                <img id="img1" src="img/joker.png" style="height: 28%;width: 28%;" alt="joker existe">
+                <img id="img2" src="img/joker.png" style="height: 28%;width: 28%;" alt="joker existe">
+            </div>
+            <div id="jokerinfo" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p style="color: #000;font-size: 26px;">pour utilisser les joker veuillez clicker sur 'j'</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="bout_tfn" style="visibility: hidden;display: none;">
+    <div id="up" ><img src="img/up1.png" style="right: 7%;position: fixed; top: 80%; height: 10%;"></div>
+    <div id="down"><img src="img/down1.png" style="right: 7%;position: fixed; top: 90.5%;  height: 10%;"></div>
+    <div id="left"><img src="img/left1.png" style="right: 13.5%;position: fixed; top:86%;  height: 10%;"></div>
+    <div id="right"><img src="img/right1.png" style="right: 1.1%;position: fixed; top: 86%; height: 10%;"></div>
+    <div id="space_bouton"><img src="img/space1.png" style="left: 2%;position: fixed; top: 89%; height: 10%;"></div>
+</div>
+
+<script>
+    var retour = document.getElementById("MenuPrincipalGOver");
+
+    retour.onclick = function (ev) { location.href = '../index.html'; };
+    // Get the modal
+    var modal = document.getElementById('jokerinfo');
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    window.onload = function() {
+        modal.style.display = "block";
+    }
+
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+
+    setTimeout(function(){
+        modal.style.display = "none";
+    },10000) ;
+    function HideMsg() {
+        var finPartie = document.getElementById("finPartieContainer");
+        finPartie.style.visibility = "hidden";
+        finPartie.style.display= 'none';
+        finPartie.style.zIndex = '0';
+    }
+    function ReplayGO(){
+        HideMsg();
+        window.location.reload();
+    }
+    function PrincipalMenuGO(){
+        HideMsg();
+        window.open('../index.html', "_Parent")
+    }
+    /*function HideMsg() {
+        var finPartie = document.getElementById("finPartieContainer");
+        finPartie.style.visibility = "hidden";
+        finPartie.style.display= 'none';
+        finPartie.style.zIndex = '0';
+    }
+    function ReplayGO(){
+        HideMsg();
+        if (GameMode ==="Normal") NormalMode();
+        else BlocksMode();
+    }
+    function PrincipalMenuGO(){
+        HideMsg();
+        ShowPrincipalMenu();
+    }*/
+</script>
+
+<script type="text/javascript" src="js/Case.js"></script>
+<script type="text/javascript" src="js/TForme.js"></script>
+<script type="text/javascript" src="js/Tetromino.js"></script>
+<script type="text/javascript" src="js/Grille.js"></script>
+<script type="text/javascript" src="js/Tetris.js"></script>
+<script type="text/javascript" src="js/Main.js"></script>
+<script type="text/javascript" src="js/AnimationTheme.js"></script>
+
+<script>
+
+    </body>
+    </html>

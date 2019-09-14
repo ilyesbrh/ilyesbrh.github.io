@@ -1,0 +1,19 @@
+canvas {
+    display: inline;
+    margin:0;
+}
+#Grille{ /* Grille du jeu*/
+    z-index: 0;
+}
+#Tetro_Suivant{/*l'espace des prochaines Tetrominos*/
+    z-index: 0;
+
+}
+#Grille.active{
+    visibility: visible;
+
+}
+#Tetro_Suivant.active{
+    visibility: visible;
+
+ }

@@ -1,0 +1,87 @@
+h1 {
+  text-shadow: 2px 2px 2px orange;
+}
+
+#myCarousel img {
+  -webkit-box-reflect: below 1px -webkit-gradient(linear, 0 0%, 0 100%, from(transparent), color-stop(0.7, transparent), to(white));
+  border: 1.3px solid white;
+}
+
+.carousel_bordure1{
+    top: 20%;
+    left: 20%;
+    position: fixed;
+    height: 60%;
+}
+.carousel_bordure2{
+    top: 0%;
+    height: 60%;
+}
+
+.indic{
+    position: fixed;
+    top: 90%;
+}
+
+.bout{
+    position: fixed;
+    top: 30%;
+}
+
+.example-desc {
+  margin:3px 0;
+  padding:5px;
+}
+
+#myCarousel {
+  width: 60%;
+  height: 100%;
+  left: 20%;
+  top: 20%;
+  position: fixed;
+  visibility: hidden;
+  clear:both;
+  overflow:hidden;
+  background: transparent;
+}
+#myCarousel img {
+   /* hide images until carousel can handle them */
+  cursor:pointer; /* otherwise it's not as obvious items can be clicked */
+}
+
+body .next {
+  left: 30%;
+}
+
+body .prev {
+  left: 30%;
+}
+
+.split-left {
+  width:450px;
+  float:left;
+}
+.split-right {
+  width:400px;
+  float:left;
+  margin-left:10px;
+}
+#callback-output {
+  height:250px;
+  overflow:scroll;
+}
+textarea#newoptions {
+  width:430px;
+}
+
+#ipad {
+  position: fixed;
+  top: 9%;
+  left: 8.06%;
+  width: 85%;
+  height: 120%;
+}
+
+
+
+

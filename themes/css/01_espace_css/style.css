@@ -1,0 +1,182 @@
+body{
+    background: url("../../img/MoonBackground.jpg")no-repeat center center fixed;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0 px;
+    bottom: 0px;
+    animation-delay: 10s;
+    pause: 10s;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color:#fff;
+}
+
+#Grille{
+    position: absolute;
+    left: 39.6%;
+    top: 3.5%;
+    animation-delay: 10s;
+    pause: 10s;
+}
+
+
+@media screen and (max-width:380px ) {
+    #Grille {
+        position: fixed;
+        left: 29%;
+        top: -0.1%;
+        animation-delay: 10s;
+        pause: 10s;
+        background-color: rgba(2, 2, 2, 0.2);
+        border: 5px solid honeydew;
+        display: inline;
+        height: 420;
+        width: 190;
+    }
+
+    h1 {
+        color: white;
+        font-family: "Agency FB";
+        display: inline;
+    }
+
+    h2 {
+        color: white;
+        font-family: "Agency FB";
+        display: block;
+    }
+
+    #stat {
+        height: 280%;
+        width: 70%;
+        right: 42%;
+        top: 14%;
+        position: fixed;
+    }
+
+    .statistics1 {
+        top: 28%;
+        left: -18%;
+        position: fixed;
+        font-size: 13px;
+        text-align: center;
+        color: #fff;
+        border: groove 0px;
+        background: rgba(2, 2, 2, 0);
+        border-bottom-left-radius: 0px;
+        padding: 2% 17.5%;
+
+    }
+
+    .statistics2 {
+        top: 50%;
+        left: -18%;
+        position: fixed;
+        font-size: 13px;
+        text-align: center;
+        color: #fff;
+        border: groove 0px;
+        background: rgba(2, 2, 2, 0);
+        border-bottom-left-radius: 0px;
+        padding: 2% 11%;
+    }
+
+    .statistics3 {
+        top: 39%;
+        left: -18%;
+        position: fixed;
+        font-size: 13px;
+        text-align: center;
+        color: #fff;
+        border: groove 0px;
+        background: rgba(2, 2, 2, 0);
+        border-bottom-left-radius: 0px;
+        padding: 2% 16.4%;
+    }
+
+    .statistics4 {
+        top: 60.3%;
+        left: -18%;
+        position: fixed;
+        font-size: 13px;
+        text-align: center;
+        color: #fff;
+        border: groove 0px;
+        background: rgba(2, 2, 2, 0);
+        border-bottom-left-radius: 0px;
+        padding: 2% 7.5%;
+    }
+
+    #iphone {
+        visibility: hidden;
+    }
+
+    #surface12 {
+        visibility: hidden;
+        height: 0%;
+        left: 0%;
+        width: 0%;
+    }
+
+    #surface1 {
+        position: fixed;
+        right: 1%;
+        visibility: hidden;
+    }
+
+    #Tetro_Suivant {
+
+        left: 86%;
+        top: 100%;
+    }
+
+    #iphone_bg {
+        visibility: hidden;
+    }
+
+    #PauseIcone {
+        position: fixed;
+        left: -10%;
+        top: 0%;
+
+    }
+
+    #MenuPause{
+        z-index: 0;
+        position: fixed;
+        visibility: hidden;
+        width: 100%;
+        height: 1%;
+        left: 0%;
+        top: 0%;
+        transition: 700ms linear;
+        background: rgba(2,2,2,0.8);
+    }
+    #MenuPause.active{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0%;
+        top: 0%;
+        visibility: visible;
+        z-index: 1;
+
+    }
+
+    #vol_plus{
+        visibility: hidden;
+    }
+    #vol_moins{
+        visibility: hidden;
+    }
+    #vol{
+        visibility: hidden;
+    }
+}

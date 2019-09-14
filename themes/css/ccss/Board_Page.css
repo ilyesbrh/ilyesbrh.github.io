@@ -1,0 +1,87 @@
+.container{
+    margin-left: 170px;
+    position: absolute;
+    visibility: hidden;
+    //border: 2px yellow dashed;
+}
+#time{
+    font-size: 5em;
+    color: #19ffc4;
+}
+#joker{
+    display: block;
+    margin-top: 40px;
+}
+#img1{
+    display: block;
+    width: 50%;
+    height: 50%;
+}
+#img2{
+    margin-top: 20px;
+    display: block;
+    width: 50%;
+    height: 50%;
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 60%; /* Location of the box */
+
+    top: 10%;
+    width: 31%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+#SonBar{
+    margin-top: 1% ;
+    z-index: 2;
+    text-align: center;
+    //border: 2px yellow dashed;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 20px;
+}
+#vol_moins, #vol, #vol_plus{
+    display: inline;
+    margin-right: 20px;
+}
+#vol_moins img, #vol_plus img, #vol img{
+    width: 50px;
+    height: 50px;
+}
+#vol_moins:active, #vol_plus:active, #vol:active{
+    transform: scale3d(0.95,0.95,0.95);
+}
+#vol_moins:hover, #vol_plus:hover, #vol:active{
+    cursor: pointer;
+}
+#vol_plus:after, #vol_moins:after, #vol:after{
+    transform: scale3d(1.05,1.05,1.05);
+}

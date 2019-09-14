@@ -1,0 +1,42 @@
+canvas {
+    display: inline;
+    margin:0;
+}
+#Grille{ /* Grille du jeu*/
+    z-index: 0;
+    visibility: hidden;
+}
+#Tetro_Suivant{/*l'espace des prochaines Tetrominos*/
+    z-index: 0;
+    visibility: hidden;
+
+}
+#Grille.active{
+
+    visibility: visible;
+
+}
+#Tetro_Suivant.active{
+    visibility: visible;
+
+ }
+#sidebarRight{ /*La partie gauche du Background*/
+    position: fixed;
+    width: 685px;
+    height: 100%;
+    left: -10px;
+    transition: 4000ms linear;
+}
+#sidebarRight.active{
+    left: -700px;
+}
+#sidebarLeft{/*La partie droite du Background*/
+    position: fixed;
+    width: 700px;
+    height: 100%;
+    right: -10px;
+    transition: 4000ms linear;
+}
+#sidebarLeft.active{
+    right: -700px;
+}

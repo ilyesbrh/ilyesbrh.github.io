@@ -1,0 +1,112 @@
+body {
+    margin: 0 ;
+    padding: 0 ;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    font-family: "Agency FB", serif;
+    color: white;
+}
+#head{
+    display: block;
+    width: 100%;
+    height: 200px;
+   // border: 3px yellow dashed;
+    text-align: center;
+}
+#pause{
+    height: 100px;
+    width: 160px;
+    margin-bottom: 0;
+//    border: 2px yellow;
+}
+#containerTheme {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 650px;
+    margin-top: 0;
+    padding-top: 8px;
+}
+#canvasContainer{
+    //border: 3px whitesmoke ridge;
+    width: 270px;
+}
+#cadre {
+    float: left;
+    position: relative;
+    /*padding-left: 50px;
+    padding-right: 50px;*/
+    margin-left: auto;
+    margin-right: auto;
+    width: 435px;
+    height: 947px;
+    /*box-shadow: 10px 10px 5px grey;*/
+
+    /*border: 10px #c1c1c1 groove;*/
+    border-radius: 15px;
+    z-index: 1;
+}
+div.infos1{
+    float: left;
+    margin-right: 4%;
+    width: 38.5%;
+    text-align: right;
+}
+div.infos2{
+    float:left  ;
+    margin-left: 4%;
+    width: 35%;
+}
+
+h2 label, h3 label{
+    /*border: 2px #c1c1c1 ridge;*/
+
+    border: 3px solid black;
+    padding: 4px 6px;
+    font-size: 36px;
+    background: black;
+}
+div.infos1 h3 label {
+    //margin-right: 5%;
+}
+div.infos2 h3 label {
+    //margin-left: 7%;
+}
+.nextTetromino{
+  //  border: 2px yellow solid;
+    border: 4px solid black;
+
+    height: 440px;
+    width: 140px;
+}
+canvas #Tetro_Suivant{
+    background-color: rgba(255,255,255,0.18);
+    position: absolute;
+
+}
+canvas #Grille{
+    background-color: rgba(255,255,255,0.18) ;
+    position: relative;
+    //border: 2px yellow solid;
+    background-position: center center;
+    size: 450px;
+
+    
+}
+#temps{
+    border: 3px solid black;
+}
+#time{
+    border: 3px solid black;
+}
+#cadGrille{
+    position: absolute;
+    left: 38.8%;
+    top: -1%;
+}
+#cadTetros{
+    position: absolute;
+    left:61.25% ;
+    top: 20%;
+}

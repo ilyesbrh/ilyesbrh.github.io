@@ -1,0 +1,110 @@
+body {
+    background-image: url("../img/Principal Background.png");/*la photo de l'arriere plan*/
+    background-size: cover;
+}
+#animation{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+div.container{
+    margin-left: 25%;
+    position: absolute;
+    display: block;
+}
+.pdiv {
+    margin-left: 45%;
+    margin-top: 80px;
+    position: absolute;
+    display: block;
+}
+ul.navbar {
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: transparent;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 30px;
+}
+ul li {
+    display: inline-block;
+    height:80px;
+    width: 80px;
+    background: transparent;
+    opacity: .8;
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+ul li ul li {
+    float: left;
+    box-sizing: border-box;
+    height:40px;
+    width: 120px;
+    background: transparent;
+    opacity: .8;
+    line-height:40px;
+    font-size: 20px;
+    text-align: center;
+    margin: 1px;
+}
+ul li ul li a:hover{
+    background: #c1c1c1;
+    color: #212121;
+    cursor: pointer;
+}
+ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+ul li ul li {
+//visibility: hidden;
+    display: none;
+    margin :0;
+}
+ul li:hover ul li {
+//visibility: visible;
+    display: block;
+    background: #212121;
+    color: #c1c1c1;
+}
+img {
+    height: 80px;
+    width:80px;
+}
+img:hover {
+    cursor: pointer;
+    transform: scale3d(2,2,2);
+}
+#jouer{
+    margin-top: 120px;
+    font-family: "Agency FB";
+    color: rgb(215,211,211);
+    letter-spacing: 4px;
+    font-size: 40px;
+    box-sizing: border-box;
+    height: 60px;
+}
+#playbutton {
+    background-image: url("../img/PlayButton.png");
+    background-size: 70px 55px;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    height: 55px;
+    width: 70px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    }
+#playbutton:hover {
+    cursor: pointer;
+    transform: scale3d(2,2,2);
+}
+#particles-js{
+    text-align: center;
+    width: 100%;
+}

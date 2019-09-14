@@ -1,0 +1,68 @@
+/*body{
+    background: url(../img/MoonBackground.jpg);/* L'arrière plan*/
+/*    height: 100%;
+    width: 100%;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    animation-delay: 10s;
+    pause: 10s;
+}*/
+
+#Grille{ /*la Grille du jeu */
+    /*position: absolute;
+    left: 40%;
+    animation-delay: 10s;
+    pause: 10s;*/
+}
+.container{
+    margin-left: 150px;
+    position: absolute;
+    visibility: hidden;
+    //border: 2px yellow dashed;
+}
+#time{
+    font-size: 5em;
+    color: #19ffc4;
+}
+
+
+
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 35%;
+    top: -15%;
+    width: 31%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}

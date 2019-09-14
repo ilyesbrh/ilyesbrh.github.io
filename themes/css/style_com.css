@@ -1,0 +1,7 @@
+.aid_btn {
+    background: transparent;
+}
+.aid_btn:hover {
+    border: 5px solid blue;
+    border-radius: 8px ;
+}

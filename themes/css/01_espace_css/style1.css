@@ -1,0 +1,146 @@
+h1{
+    color: white;
+    font-family: "Agency FB";
+    display: inline;
+}
+h2{
+    color: white;
+    font-family: "Agency FB";
+    display: block;
+}
+.statistics1{
+    top: 4.4%;
+    right: 62%;
+    position: fixed;
+    font-size: 23px;
+    text-align: center;
+    color: #fff;
+    border: groove 1.8px ;
+    background: rgba(2,2,2,0.04);
+    border-bottom-left-radius: 40px;
+    padding: 1% 8%;
+}
+.statistics2{
+    top: 50%;
+    right: 62%;
+    position: fixed;
+    font-size: 23px;
+    text-align: center;
+    color: #fff;
+    border: groove 1.8px ;
+    background: rgba(2,2,2,0.04);
+    border-bottom-left-radius: 40px;
+    padding: 1% 4.7%;
+}
+.statistics3{
+    top: 27%;
+    right: 62%;
+    position: fixed;
+    font-size: 23px;
+    text-align: center;
+    color: #fff;
+    border: groove 1.8px ;
+    background: rgba(2,2,2,0.04);
+    border-bottom-left-radius: 40px;
+    padding: 1% 6.9%;
+}
+.statistics4 {
+    top: 72.4%;
+    right: 62%;
+    position: fixed;
+    font-size: 23px;
+    text-align: center;
+    color: #fff;
+    border: groove 1.8px ;
+    background: rgba(2,2,2,0.04);
+    border-bottom-left-radius: 40px;
+    padding: 1% 3%;
+}
+* {
+
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    animation-delay: 6s;
+
+}
+canvas {
+    display: inline;
+    margin:0;
+}
+#surface{
+    z-index: 0;
+    visibility: hidden;
+}
+#surface.active{
+
+    visibility: visible;
+
+}
+#logo21 {
+    position: fixed;
+    top: 3%;
+    left: 6%;
+    z-index: 0;
+}
+
+
+#fin{
+    position: fixed;
+    left: -400%;
+    top: 7%;
+    transition: 200ms linear;
+
+}
+#fin.activfin{
+    position: fixed;
+    left: 10%;
+
+}
+
+
+#PauseIcone{
+    position: fixed;
+    right: 19.5%;
+    top: -2%;
+
+}
+
+
+#pause1{
+    position: fixed;
+    width: 3%;
+    height: 4%;
+    right: 20%;
+    top: 5%;
+    transition: 500ms linear;
+    background: rgba(2,2,2,0.2);
+}
+
+#pause1.activpause{
+    width: 35%;
+    height: 54%;
+    right: 9%;
+    top: -68%;
+    -webkit-transform: perspective(600px) translate3d(-40%,100%,250px)  ;
+    transform: perspective(600px) translate3d(-40%,100%,250px)  ;
+
+    transition: -webkit-transform 300ms linear 300ms;
+    transition: transform 300ms linear 300ms;
+}
+
+
+
+.espace1{
+    position: absolute;
+    margin: 0% 5%;
+    width: 60%;
+    height: 80%;
+    left:15%;
+    top:15%;
+    background: rgba(2,2,2,0.5) ;
+
+}
+
+
+
