@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900');
+html {
+  display: grid;
+  min-height: 100%;
+}
+
+body {
+  display: grid;
+  background-color: #red;
+}
+
+body {
+  animation: colorchange 50s;
+  /* animation-name followed by duration in seconds*/
+  /* you could also use milliseconds (ms) or something like 2.5s */
+  -webkit-animation: colorchange 50s;
+  /* Chrome and Safari */
+}
+
+@keyframes colorchange {
+  0% {
+    background: red;
+  }
+  25% {
+    background: yellow;
+  }
+  50% {
+    background: blue;
+  }
+  75% {
+    background: green;
+  }
+  100% {
+    background: red;
+  }
+}
+
+@-webkit-keyframes colorchange
+/* Safari and Chrome - necessary duplicate */
+
+  {
+  0% {
+    background: red;
+  }
+  25% {
+    background: yellow;
+  }
+  50% {
+    background: blue;
+  }
+  75% {
+    background: green;
+  }
+  100% {
+    background: red;
+  }
+}
+
+.container {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  width: 650px;
+  height: 480px;
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  margin-top: 2em;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #f6f4f3;
+}
+
+#timer {
+  color: #f6f4f3;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7em;
+  letter-spacing: 5px;
+  margin-top: 25%;
+}
+
+.days, .hours, .minutes, .seconds {
+  display: inline-block;
+  padding: 20px;
+  width: 100px;
+  border-radius: 5px;
+}
+
+.days {
+  background: #ef2f3c;
+}
+
+.hours {
+  background: #f6f4f3;
+  color: #183059;
+}
+
+.minutes {
+  background: #276fbf;
+}
+
+.seconds {
+  background: #f0a202;
+}
+
+.numbers {
+  font-family: 'Montserrat', sans-serif;
+  color: #183059;
+  font-size: 5em;
+}
+
+.white {
+  position: absolute;
+  background: #f6f4f3;
+  height: 85px;
+  width: 75px;
+  left: 30%;
+  top: 2%;
+}
+
+.white .triangle {
+  border-bottom: 14px solid #f6f4f3;
+}
+
+.white .string {
+  background: #f6f4f3;
+  border: 1px solid #f6f4f3;
+}
+
+.red {
+  position: absolute;
+  background: #ef2f3c;
+  left: 18%;
+  top: 9%;
+  height: 65px;
+  width: 70px;
+}
+
+.red .triangle {
+  border-bottom: 14px solid #ef2f3c;
+}
+
+.red .string {
+  background: #ef2f3c;
+  border: 1px solid #ef2f3c;
+}
+
+.blue {
+  position: absolute;
+  background: #276fbf;
+  height: 80px;
+  width: 80px;
+  left: 60%;
+  top: 5%;
+}
+
+.blue .triangle {
+  border-bottom: 14px solid #276fbf;
+}
+
+.blue .string {
+  background: #276fbf;
+  border: 1px solid #276fbf;
+}
+
+.balloon {
+  border: 1px solid #000;
+  border-radius: 50% 50% 50% 50%/ 40% 40% 60% 60%;
+  z-index: 2;
+}
+
+.eye {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  top: 40%;
+  left: 22%;
+  background: #000;
+  border-radius: 50%;
+}
+
+.eye:after {
+  content: '';
+  left: 35px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #000;
+  position: absolute;
+}
+
+.mouth {
+  position: absolute;
+  top: 45%;
+  left: 43%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.happy {
+  border: 2px solid;
+  border-color: transparent #000 #000 transparent;
+  transform: rotate(45deg);
+}
+
+.triangle {
+  position: absolute;
+  left: 40%;
+  bottom: -10%;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+}
+
+.string {
+  position: absolute;
+  height: 70px;
+  width: 1px;
+  left: 48%;
+  top: 100%;
+  z-index: -1;
+}
+
+.star {
+  width: 20px;
+  height: 20px;
+  background: #f6f4f3;
+  -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.star-red {
+  width: 30px;
+  height: 30px;
+  margin-left: 51px;
+  margin-top: -5px;
+  background: #ef2f3c;
+  -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-transform: uppercase;
+  padding: 10px;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7em;
+}
+
+footer p {
+  letter-spacing: 3px;
+  color: #ef2f3c;
+}
+
+footer a {
+  color: #f6f4f3;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #276fbf;
+}
+
+.center {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f6f4f3;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 20%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button {
+  animation: colorchange 20s;
+  /* animation-name followed by duration in seconds*/
+  /* you could also use milliseconds (ms) or something like 2.5s */
+  -webkit-animation: colorchange 20s;
+  /* Chrome and Safari */
+}
+
+@keyframes colorchange {
+  0% {
+    background: blue;
+  }
+  25% {
+    background: yellow;
+  }
+  50% {
+    background: green;
+  }
+  75% {
+    background: red;
+  }
+  100% {
+    background: #183059;
+  }
+}
+
+@-webkit-keyframes colorchange
+/* Safari and Chrome - necessary duplicate */
+
+  {
+  0% {
+    background: blue;
+  }
+  25% {
+    background: yellow;
+  }
+  50% {
+    background: green;
+  }
+  75% {
+    background: red;
+  }
+  100% {
+    background: #183059;
+  }
+}
