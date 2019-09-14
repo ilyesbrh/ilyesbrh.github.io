@@ -16,10 +16,10 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <input id="inp" type="text" style="margin-bottom: 50px;width: 300px;">
-        <button id="guess">guess me</button>
+        <button onclick="guess()" id="guess">guess me</button>
         <script async defer>
             var n = Math.floor(Math.random() * 10); 
-            document.getElementById('guess').click = ()=>{
+            function guess() {
                 if(document.getElementById('inp').value === n){
                     alert('congrats');
                 }else{
