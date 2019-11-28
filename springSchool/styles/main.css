@@ -1,0 +1,98 @@
+#intro {
+  background: url("../img/abstract2.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.top-nav-collapse {
+  background-color: #3949ab !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+  background: transparent !important;
+}
+
+@media (max-width: 768px) {
+  .navbar:not(.top-nav-collapse) {
+    /*background: #3949ab !important;*/
+  }
+}
+
+#intro .h6 {
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.hm-gradient .full-bg-img {
+  background: rgba(42, 27, 161, 0.7);
+  background: linear-gradient(62deg, rgba(61, 46, 182, 0.32), rgba(218, 218, 218, 0) 59%);
+}
+
+@media (max-width: 450px) {
+  .margins {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+}
+
+#pricing .lead {
+  opacity: 0.7;
+}
+
+#pricing .card-image.img1 {
+  background: url("../img/abstract2.jpg") no-repeat center center;
+  background-size: cover;
+}
+#pricing .card-image.img2 {
+  background: url("../img/abstract2.jpg") no-repeat center center;
+  background-size: cover;
+
+}
+
+#pricing ul li {
+  font-size: 1.1em;
+}
+
+.transaction {
+  transition: all 2s linear 1s;
+}
+
+/* countdown */
+
+.cd-container {
+  background: url("/img/abstract3.jpg");
+  background-position: center;
+  box-sizing: border-box;
+  font-weight: 700;
+  color: black;
+  text-align: center;
+}
+
+.cd-container .h1 {
+  font-weight: normal;
+}
+.cd-container ul {
+  padding-left: 0;
+}
+
+.cd-container li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+.cd-container li span {
+  display: block;
+}
+
+/* Map */
+
+#contact {
+  background: url("/img/azaba.png");
+}
+
+/* table */
+.table{
+  min-width: 600px;
+  overflow-x: auto;
+}
