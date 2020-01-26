@@ -1,12 +1,16 @@
 body {
     font-family: 'Roboto', sans-serif!important;
-    min-height: 100vh;
-    min-width: 100vw;
+    min-height: 99vh;
+    min-width: 99vw;
     .content-container {
         min-height: 100vh;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        .card>img {
+            cursor: pointer;
+        }
     }
     background: #a8ff78;
     /* fallback for old browsers */
@@ -72,12 +76,11 @@ body {
     /* Large devices (desktops, 992px and up) */
     @media (min-width: 992px) {
         width: 50%;
-        min-height: 60vh;
+        min-height: 85vh;
     }
     /* Extra large devices (large desktops, 1200px and up) */
     @media (min-width: 1200px) {}
     position: relative;
-    height: 25em;
     border: none;
     margin: 10px 10px;
     perspective: 150em;
