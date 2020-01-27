@@ -74,7 +74,7 @@ function upload() {
         formData.append('image', file, file.filename + '.png');
         formData.append('token', Token);
 
-        const url = 'http://farmy-backend.herokuapp.com/api/v1/test-model';
+        const url = 'https://farmy-backend.herokuapp.com/api/v1/test-model';
 
         axios.post(url, formData)
             .then(function(res) {
