@@ -18,37 +18,34 @@
     <div class="content-container">
         <div class="card">
             <div class="card__side card__side--front d-flex flex-column justify-content-between align-items-center p-4">
-                <a href="https://www.farmy.ai" class="h1">Farmy.ai</a>
+                <a href="https://www.farmy.ai" class="h1"><img src="icon.png" width="42px" height="42px" alt=""> Farmy.ai</a>
                 <img id="display-image" src="upload.png" class="img-fluid p-2 m-3 shadow-lg" style="height: 70%;" onclick="openUpload()" alt="">
                 <button id="upload" type="button" class="btn btn-outline-success w-25 font-weight-bold " onClick="upload()"> Send</button>
             </div>
-            <div class="card__side card__side--back d-flex flex-column justify-content-around align-items-center p-4">
+            <div class="card__side card__side--back d-flex flex-column justify-content-around align-items-center p-4 align-text-center">
 
-                <div class="progress w-100" style="height: 40px;">
-                    <div id="1" class="progress-bar progress-bar-success font-weight-bold h5 m-0" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
-                        Early blight 90%
-                    </div>
-                </div>
+                <a href="https://www.farmy.ai" class="h1"><img src="icon.png" width="42px" height="42px" alt=""> Farmy.ai</a>
 
-                <div class="progress w-100" style="height: 40px;">
-                    <div id="2" class="progress-bar progress-bar-success font-weight-bold h5 m-0" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
-                        Early blight 90%
-                    </div>
-                </div>
+                <ul id="skill">
+                    <li>
+                        <span class="bar d1"></span>
+                        <p id="1">d1</p>
+                    </li>
+                    <li>
+                        <span class="bar d2"></span>
+                        <p id="2">d2</p>
+                    </li>
+                    <li>
+                        <span class="bar d3"></span>
+                        <p id="3">d3</p>
+                    </li>
+                    <li>
+                        <span class="bar d4"></span>
+                        <p id="4">d4</p>
+                    </li>
+                </ul>
 
-                <div class="progress w-100" style="height: 40px;">
-                    <div id="3" class="progress-bar progress-bar-success font-weight-bold h5 m-0" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
-                        Early blight 90%
-                    </div>
-                </div>
-
-                <div class="progress w-100" style="height: 40px;">
-                    <div id="4" class="progress-bar progress-bar-success font-weight-bold h5 m-0" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
-                        Early blight 90%
-                    </div>
-                </div>
-
-                <button type="button" class="btn btn-outline-success w-25" onclick="flipIt(false)">Try again (4)</button>
+                <button id="tryAgain" type="button" class="btn btn-outline-success w-25" onclick="flipIt(false)">Try again</button>
             </div>
         </div>
 

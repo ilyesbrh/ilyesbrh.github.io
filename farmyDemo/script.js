@@ -1,6 +1,5 @@
 var image;
 var Token;
-var response;
 
 function init() {
     let url = new URL(location.href);
@@ -23,15 +22,22 @@ function flipIt(flip) {
     )
 }
 
-function fillData() {
-    document.getElementById('1').innerText = 'this for id 1';
-    document.getElementById('1').style.width = 90 + '%';
-    document.getElementById('2').innerText = 'this for id 2';
-    document.getElementById('2').style.width = 60 + '%';
-    document.getElementById('3').innerText = 'this for id 3';
-    document.getElementById('3').style.width = 50 + '%';
-    document.getElementById('4').innerText = 'this for id 4';
-    document.getElementById('4').style.width = 10 + '%';
+function fillData(data) {
+    for (let index = 0; index < 4; index++) {
+
+        data.predictions[index].disease;
+        document.body.getElementsByClassName('d' + (index + 1))[0].innerText = (data.predictions[index].confidence * 100 | 0) + '%';
+        document.body.getElementsByClassName('d' + (index + 1))[0].style.width = (data.predictions[index].confidence * 100 | 0) + '%';
+        document.getElementById((index + 1)).innerText = data.predictions[index].disease;
+    }
+
+    document.getElementById('tryAgain').innerText = 'Try again (' + data.tries + ')';
+    if (data.tries < 1) {
+        document.getElementById('tryAgain').innerText = 'no more tries available :( ';
+        document.getElementById('tryAgain').setAttribute('disabled', 'true');
+        document.getElementById('tryAgain').classList.add('w-75');
+    }
+
 }
 
 function openUpload() {
@@ -58,6 +64,7 @@ function upload() {
 
     if (!image) {
         $("#imageModel").modal();
+        return;
     }
 
     if (Token && Token.length !== 0) {
@@ -72,11 +79,12 @@ function upload() {
         axios.post(url, formData)
             .then(function(res) {
                 console.log(res);
-                response = res;
+                fillData(res.data);
                 flipIt(true);
             })
             .catch(function(error) {
-                console.log(error);
+
+                $("#TokenModel").modal();
             });
 
     } else {
