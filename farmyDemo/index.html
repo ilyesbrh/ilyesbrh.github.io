@@ -18,13 +18,18 @@
     <div class="content-container">
         <div class="card">
             <div class="card__side card__side--front d-flex flex-column justify-content-between align-items-center p-4">
-                <a href="https://www.farmy.ai" class="h1"><img src="icon.png" width="42px" height="42px" alt=""> Farmy.ai</a>
-                <img id="display-image" src="upload.png" class="img-fluid p-2 m-3 shadow-lg" style="height: 70%;" onclick="openUpload()" alt="">
+                <a href="https://www.farmy.ai" class="h1 font-weight-bold"><img src="icon.png" width="42px" height="42px" alt=""> Farmy.ai</a>
+                <div id="upload-container" class="upload-container d-flex flex-column justify-content-center align-items-center  p-2 m-3 w-75 shadow-sm">
+
+                    <button class="upload mt-4" onclick="openUpload()">Select image</button>
+
+                </div>
+                <img id="display-image" src="upload.png" class="img-fluid  m-3 shadow d-none" style="height: 70%;cursor: pointer;" onclick="openUpload()" alt="">
                 <button id="upload" type="button" class="btn btn-outline-success w-25 font-weight-bold " onClick="upload()"> Send</button>
             </div>
             <div class="card__side card__side--back d-flex flex-column justify-content-around align-items-center p-4 align-text-center">
 
-                <a href="https://www.farmy.ai" class="h1"><img src="icon.png" width="42px" height="42px" alt=""> Farmy.ai</a>
+                <a href="https://www.farmy.ai" class="h1 font-weight-bold "><img src="icon.png" width="42px" height="42px" alt=""> Farmy.ai</a>
 
                 <ul id="skill">
                     <li>

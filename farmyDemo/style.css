@@ -1,5 +1,5 @@
 body {
-  font-family: "Roboto", sans-serif !important;
+  font-family: "Roboto", "Helvetica Neue", sans-serif !important;
   min-height: 99vh;
   min-width: 99vw;
   background: #a8ff78;
@@ -26,6 +26,44 @@ body .content-container {
 
 body .content-container .card > img {
   cursor: pointer;
+}
+
+body .content-container .upload-container {
+  background-color: #eee;
+  height: 70%;
+  border-radius: 7px;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+body .content-container .upload-container .upload {
+  margin: .5rem .5rem 1rem .5rem;
+  clear: both;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: initial;
+  border: none;
+  border-radius: .2rem;
+  outline: none;
+  padding: 0 1rem;
+  height: 36px;
+  line-height: 36px;
+  color: #fff;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #454cad;
+  border-color: #454cad;
+  cursor: pointer;
+}
+
+body .content-container .upload-container:hover {
+  border: 3px solid #454cad;
+  -webkit-box-shadow: inset 0 0 0 6px #eee;
+          box-shadow: inset 0 0 0 6px #eee;
 }
 
 /* flip card */
@@ -169,8 +207,8 @@ body .content-container .card > img {
   height: 22px;
   margin: 1px 2px;
   padding-left: 3px;
-  font-weight: 600;
-  font-size: 20px;
+  font-weight: 800;
+  font-size: 18px;
   color: black;
   white-space: nowrap;
   overflow: visible;
@@ -183,16 +221,16 @@ body .content-container .card > img {
 
 .d1 {
   width: 100%;
-  background-color: #f674a4;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f674a4), to(#e06995));
-  background-image: linear-gradient(top, #f674a4, #e06995);
+  background-color: #a1ce5b;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#a1ce5b), to(#91ba52));
+  background-image: linear-gradient(top, #a1ce5b, #91ba52);
 }
 
 .d2 {
   width: 90%;
-  background-color: #f0bb4b;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f0bb4b), to(#d9aa44));
-  background-image: linear-gradient(top, #f0bb4b, #d9aa44);
+  background-color: #a1ce5b;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#a1ce5b), to(#91ba52));
+  background-image: linear-gradient(top, #a1ce5b, #91ba52);
 }
 
 .d3 {
@@ -204,8 +242,8 @@ body .content-container .card > img {
 
 .d4 {
   width: 90%;
-  background-color: #66b3cc;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#66b3cc), to(#5da3ba));
-  background-image: linear-gradient(top, #66b3cc, #5da3ba);
+  background-color: #a1ce5b;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#a1ce5b), to(#91ba52));
+  background-image: linear-gradient(top, #a1ce5b, #91ba52);
 }
 /*# sourceMappingURL=style.css.map */

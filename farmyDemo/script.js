@@ -10,6 +10,15 @@ function init() {
 function flipIt(flip) {
     console.log('clicked');
 
+    if (!flip) {
+        let img = document.getElementById('display-image');
+        let container = document.getElementById('upload-container');
+
+        container.classList.remove('d-flex');
+        img.classList.remove('d-none');
+        container.classList.add('d-none');
+        img.classList.add('d-block');
+    }
 
     document.querySelectorAll('.card__side').forEach(
         (v) => {
@@ -42,6 +51,7 @@ function fillData(data) {
 
 function openUpload() {
     document.getElementById('upload-image').click();
+
 };
 
 function changeToken(token) {
@@ -49,8 +59,15 @@ function changeToken(token) {
 }
 
 function changeImage(event) {
-    var output = document.getElementById('display-image');
-    output.src = URL.createObjectURL(event.target.files[0]);
+    let img = document.getElementById('display-image');
+    let container = document.getElementById('upload-container');
+
+    container.classList.remove('d-flex');
+    img.classList.remove('d-none');
+    container.classList.add('d-none');
+    img.classList.add('d-block');
+
+    img.src = URL.createObjectURL(event.target.files[0]);
     image = event.target.files[0];
 }
 
