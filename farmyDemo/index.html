@@ -25,9 +25,9 @@
     <!-- <button id="upload" type="button" class="btn btn-outline-success w-25 font-weight-bold" onClick="upload()"> Send</button> -->
     <!-- <button id="tryAgain" type="button" class="btn btn-outline-success w-25" onclick="flipIt(false)">Try again</button> -->
     <div class="content-container animated fadeIn" style="animation-duration: 2s;">
-        <a href="https://www.farmy.ai" class="h1 font-weight-bold mt-3"><img src="icon.png" width="42px" height="42px" alt=""> Farmy.ai</a>
+        <a href="https://www.farmy.ai" class="h1 font-weight-bold mt-4 pl-sm-4 pl-3 w-100 d-flex align-items-center justify-content-start text-dark"><img src="icon.png" width="42px" height="42px" alt=""> Farmy.ai</a>
 
-        <div id="card-container" class="card-container select my-auto" style="z-index: 5;">
+        <div id="card-container" class="card-container select my-auto">
             <div class="upload-container card-1 bg-light" onclick="openUpload()">
                 <i id="icon" class="material-icons">cloud_upload</i>
                 <span id="span" class="display-6 w-100">Drag or Select an image</span>
@@ -68,53 +68,52 @@
 
         </div>
 
-        <!-- The Modal -->
-        <div class="modal fade" id="imageModel">
-            <div class="modal-dialog">
-                <div class="modal-content">
+    </div>
+    <!-- The Modal -->
+    <div class="modal fade" id="imageModel">
+        <div class="modal-dialog">
+            <div class="modal-content">
 
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">No image selected</h4>
-                        <button type="button" class="close" data-dismiss="modal">×</button>
-                    </div>
-
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    </div>
-
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">No image selected</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
                 </div>
-            </div>
-        </div>
-        <!-- The Modal -->
-        <div class="modal fade" id="TokenModel">
-            <div class="modal-dialog">
-                <div class="modal-content">
 
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Token non Valid</h4>
-                        <button type="button" class="close" data-dismiss="modal">×</button>
-                    </div>
-
-                    <!-- Modal body -->
-                    <div class="modal-body d-flex flex-column align-items-center justify-content-around">
-                        <p> please set token that we gave you :) </p>
-                        <input id="token-input" type="text" class="form-control form-control w-75" placeholder="set token here..." onchange="setToken()">
-                    </div>
-
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-success" data-dismiss="modal" onclick="setToken()">Ok</button>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    </div>
-
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
+
             </div>
         </div>
     </div>
+    <!-- The Modal -->
+    <div class="modal fade" id="TokenModel">
+        <div class="modal-dialog">
+            <div class="modal-content">
 
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Token non Valid</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body d-flex flex-column align-items-center justify-content-around">
+                    <p> please set token that we gave you :) </p>
+                    <input id="token-input" type="text" class="form-control form-control w-75" placeholder="set token here..." onchange="setToken()">
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="setToken()">Ok</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
