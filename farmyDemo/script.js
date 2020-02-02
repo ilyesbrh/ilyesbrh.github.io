@@ -1,35 +1,41 @@
 var image;
 var Token;
 
+const cardContainer = document.getElementById('card-container');
+const span = document.getElementById('span');
+const icon = document.getElementById('icon');
+const img = document.getElementById('display-image');
+const btn = document.getElementById('buttons');
+const spinner = document.getElementById('spinner');
+
 function init() {
     let url = new URL(location.href);
     let searchParams = new URLSearchParams(url.search);
     Token = searchParams.get('token');
-}
 
-function flipIt(flip) {
-    console.log('clicked');
+    /* Drag and drop */
 
-    if (!flip) {
-        let img = document.getElementById('display-image');
-        let container = document.getElementById('upload-container');
+    cardContainer.ondragover = cardContainer.ondragenter = function(evt) {
+        evt.preventDefault();
+    };
 
-        container.classList.remove('d-flex');
+    cardContainer.ondrop = function(evt) {
+        const fileInput = document.getElementById('upload-image');
+        fileInput.files = evt.dataTransfer.files;
+        evt.preventDefault();
+
+        img.src = URL.createObjectURL(evt.dataTransfer.files[0]);
+        image = evt.dataTransfer.files[0];
+
+        cardContainer.classList.remove('select');
+        span.classList.add('d-none');
+        icon.classList.add('d-none');
         img.classList.remove('d-none');
-        container.classList.add('d-none');
-        img.classList.add('d-block');
-    }
-
-    document.querySelectorAll('.card__side').forEach(
-        (v) => {
-            if (flip) {
-                v.classList.add('flip');
-            } else {
-                v.classList.remove('flip');
-            }
-        }
-    )
+        btn.classList.remove('d-none');
+        btn.classList.add('d-flex');
+    };
 }
+
 
 function fillData(data) {
     for (let index = 0; index < 4; index++) {
@@ -59,21 +65,32 @@ function changeToken(token) {
 }
 
 function changeImage(event) {
-    let img = document.getElementById('display-image');
-    let container = document.getElementById('upload-container');
-
-    container.classList.remove('d-flex');
-    img.classList.remove('d-none');
-    container.classList.add('d-none');
-    img.classList.add('d-block');
 
     img.src = URL.createObjectURL(event.target.files[0]);
     image = event.target.files[0];
+
+    cardContainer.classList.remove('select');
+    span.classList.add('d-none');
+    icon.classList.add('d-none');
+    img.classList.remove('d-none');
+    btn.classList.remove('d-none');
+    btn.classList.add('d-flex');
+
 }
 
 function setToken() {
 
     Token = document.getElementById('token-input').value;
+}
+
+function cancel() {
+
+    cardContainer.classList.add('select');
+    span.classList.remove('d-none');
+    icon.classList.remove('d-none');
+    img.classList.add('d-none');
+    btn.classList.add('d-none');
+    btn.classList.remove('d-flex');
 }
 
 function upload() {
@@ -86,6 +103,13 @@ function upload() {
 
     if (Token && Token.length !== 0) {
 
+
+        img.classList.add('d-none');
+        btn.classList.add('d-none');
+        btn.classList.remove('d-flex');
+        spinner.classList.remove('d-none');
+        cardContainer.classList.add('select');
+
         const file = new Blob([image], { type: 'image/png' });
         const formData = new FormData();
         formData.append('image', file, file.filename + '.png');
@@ -97,9 +121,19 @@ function upload() {
             .then(function(res) {
                 console.log(res);
                 fillData(res.data);
-                flipIt(true);
+                /* show result pane */
+                img.classList.remove('d-none');
+                spinner.classList.add('d-none');
+                cardContainer.classList.remove('select');
             })
             .catch(function(error) {
+
+                /* show error pane */
+                img.classList.remove('d-none');
+                spinner.classList.add('d-none');
+                cardContainer.classList.remove('select');
+                btn.classList.remove('d-none');
+                btn.classList.add('d-flex');
 
                 $("#TokenModel").modal();
             });
@@ -107,7 +141,6 @@ function upload() {
     } else {
         $("#TokenModel").modal();
     }
-}
-
+};
 
 init();

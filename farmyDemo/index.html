@@ -10,48 +10,46 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <input id="upload-image" type="file" name="image" accept="image/*" onchange="changeImage(event)" style="display: none;">
-    <div class="content-container">
-        <div class="card">
-            <div class="card__side card__side--front d-flex flex-column justify-content-between align-items-center p-4">
-                <a href="https://www.farmy.ai" class="h1 font-weight-bold"><img src="icon.png" width="42px" height="42px" alt=""> Farmy.ai</a>
-                <div id="upload-container" class="upload-container d-flex flex-column justify-content-center align-items-center  p-2 m-3 w-75 shadow-sm">
 
-                    <button class="upload mt-4" onclick="openUpload()">Select image</button>
+    <img src="img1.svg" class="animated fadeIn" style="width: 300px;height: 300px;position: absolute;bottom: 0;left: 0;animation-duration: 5s;" alt="">
+    <img src="img2.svg" class="animated fadeIn" style="width: 300px;height: 300px;position: absolute;top: 0;right: 0;animation-duration: 5s;" alt="">
 
+    <!-- <button class="upload mt-4" onclick="openUpload()">Select image</button> -->
+    <!-- <button id="upload" type="button" class="btn btn-outline-success w-25 font-weight-bold" onClick="upload()"> Send</button> -->
+    <!-- <a href="https://www.farmy.ai" class="h1 font-weight-bold"><img src="icon.png" width="42px" height="42px" alt=""> Farmy.ai</a> -->
+    <!-- <button id="tryAgain" type="button" class="btn btn-outline-success w-25" onclick="flipIt(false)">Try again</button> -->
+    <div class="content-container animated fadeIn" style="animation-duration: 2s;">
+
+        <div id="card-container" class="card-container select" style="z-index: 5;">
+            <div class="upload-container card-1 bg-light" onclick="openUpload()">
+                <i id="icon" class="material-icons">cloud_upload</i>
+                <span id="span" class="display-6 w-100">Drag or Select an image</span>
+
+                <img id="display-image" class="img-fluid d-none" src="upload.png" alt="">
+
+
+                <div id="spinner" class="spinner-border text-success d-none" style="width: 128px;height: 128px;" role="status">
+                    <span class="sr-only">Loading...</span>
                 </div>
-                <img id="display-image" src="upload.png" class="img-fluid  m-3 shadow d-none" style="height: 70%;cursor: pointer;" onclick="openUpload()" alt="">
-                <button id="upload" type="button" class="btn btn-outline-success w-25 font-weight-bold " onClick="upload()"> Send</button>
             </div>
-            <div class="card__side card__side--back d-flex flex-column justify-content-around align-items-center p-4 align-text-center">
 
-                <a href="https://www.farmy.ai" class="h1 font-weight-bold "><img src="icon.png" width="42px" height="42px" alt=""> Farmy.ai</a>
-
-                <ul id="skill">
-                    <li>
-                        <span class="bar d1"></span>
-                        <p id="1">d1</p>
-                    </li>
-                    <li>
-                        <span class="bar d2"></span>
-                        <p id="2">d2</p>
-                    </li>
-                    <li>
-                        <span class="bar d3"></span>
-                        <p id="3">d3</p>
-                    </li>
-                    <li>
-                        <span class="bar d4"></span>
-                        <p id="4">d4</p>
-                    </li>
-                </ul>
-
-                <button id="tryAgain" type="button" class="btn btn-outline-success w-25" onclick="flipIt(false)">Try again</button>
+            <div id="buttons" class="buttons d-none w-100 mt-2">
+                <button class="pure-material-button-contained bg-danger" style="width: 115px; margin-right: 12px;" onclick="cancel()">cancel</button>
+                <button class="pure-material-button-contained bg-success w-100" onClick="upload()">upload</button>
             </div>
+            <div id="results" class="d-flex flex-column w-100 mt-2">
+
+                <div class="disease d-none" style="width: 100%;height: 40px;background-color: aqua;"></div>
+
+            </div>
+
         </div>
 
         <!-- The Modal -->
@@ -100,11 +98,13 @@
             </div>
         </div>
     </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
 </body>
