@@ -27,7 +27,7 @@
     <!-- <button id="tryAgain" type="button" class="btn btn-outline-success w-25" onclick="flipIt(false)">Try again</button> -->
     <div class="content-container animated fadeIn" style="animation-duration: 2s;">
 
-        <div id="card-container" class="card-container select" style="z-index: 5;">
+        <div id="card-container" class="card-container select my-auto" style="z-index: 5;">
             <div class="upload-container card-1 bg-light" onclick="openUpload()">
                 <i id="icon" class="material-icons">cloud_upload</i>
                 <span id="span" class="display-6 w-100">Drag or Select an image</span>
@@ -44,10 +44,26 @@
                 <button class="pure-material-button-contained bg-danger" style="width: 115px; margin-right: 12px;" onclick="cancel()">cancel</button>
                 <button class="pure-material-button-contained bg-success w-100" onClick="upload()">upload</button>
             </div>
-            <div id="results" class="d-flex flex-column w-100 mt-2">
+            <div id="results" class="results d-none flex-column align-items-center w-100 mt-2">
+                <div class="h2 mt-4 mb-2 w-100 text-center">Results</div>
+                <div class="disease card-1 my-2" id="0">
+                    <span class="Dname">Early Blight </span> <span class="ml-2 percent"> 90%</span>
+                    <div class="percentage" style="width: 90%;"></div>
+                </div>
+                <div class="disease card-1 my-2" id="1">
+                    <span class="Dname">Early Blight </span> <span class="ml-2 percent"> 90%</span>
+                    <div class="percentage" style="width: 10%;"></div>
+                </div>
+                <div class="disease card-1 my-2" id="2">
+                    <span class="Dname">Late Blight </span> <span class="ml-2 percent"> 90%</span>
+                    <div class="percentage" style="width: 1%;"></div>
+                </div>
+                <div class="disease card-1 my-2" id="3">
+                    <span class="Dname">Other </span> <span class="ml-2 percent"> 90%</span>
+                    <div class="percentage" style="width: 1%;"></div>
+                </div>
 
-                <div class="disease d-none" style="width: 100%;height: 40px;background-color: aqua;"></div>
-
+                <button id="tryAgain" class="pure-material-button-contained bg-success w-50 mt-4">Try again (X)</button>
             </div>
 
         </div>

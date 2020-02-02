@@ -7,6 +7,7 @@ const icon = document.getElementById('icon');
 const img = document.getElementById('display-image');
 const btn = document.getElementById('buttons');
 const spinner = document.getElementById('spinner');
+const results = document.getElementById('results');
 
 function init() {
     let url = new URL(location.href);
@@ -41,16 +42,31 @@ function fillData(data) {
     for (let index = 0; index < 4; index++) {
 
         data.predictions[index].disease;
-        document.body.getElementsByClassName('d' + (index + 1))[0].innerText = (data.predictions[index].confidence * 100 | 0) + '%';
-        document.body.getElementsByClassName('d' + (index + 1))[0].style.width = (data.predictions[index].confidence * 100 | 0) + '%';
-        document.getElementById((index + 1)).innerText = data.predictions[index].disease;
+        document.body.getElementsByClassName('percent')[index].innerText = (data.predictions[index].confidence * 100 | 0) + '%';
+        document.body.getElementsByClassName('percentage')[index].style.width = (data.predictions[index].confidence * 100 | 0) + '%';
+        document.body.getElementsByClassName('Dname')[index].innerText = data.predictions[index].disease;
     }
 
     document.getElementById('tryAgain').innerText = 'Try again (' + data.tries + ')';
     if (data.tries < 1) {
         document.getElementById('tryAgain').innerText = 'no more tries available :( ';
         document.getElementById('tryAgain').setAttribute('disabled', 'true');
-        document.getElementById('tryAgain').classList.add('w-75');
+    } else {
+        document.getElementById('tryAgain').onclick = () => {
+            /* remove result show */
+            results.classList.remove('d-flex');
+            results.classList.add('d-none');
+            /* add upload layout */
+            cardContainer.classList.add('select');
+            span.classList.remove('d-none');
+            icon.classList.remove('d-none');
+            img.classList.add('d-none');
+            /* center card again */
+            cardContainer.classList.add('my-auto');
+            cardContainer.classList.remove('my-5');
+
+        };
+
     }
 
 }
@@ -125,8 +141,17 @@ function upload() {
                 img.classList.remove('d-none');
                 spinner.classList.add('d-none');
                 cardContainer.classList.remove('select');
+                /* prepare for result show */
+                cardContainer.classList.remove('my-auto');
+                cardContainer.classList.add('my-5');
+                /* prepare for result show */
+                results.classList.remove('d-none');
+                results.classList.add('d-flex');
+
             })
             .catch(function(error) {
+
+                console.log(error);
 
                 /* show error pane */
                 img.classList.remove('d-none');
