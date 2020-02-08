@@ -1,0 +1,25 @@
+body {
+    font-family: "Roboto", sans-serif !important;
+    background: #8e9eab;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fdfbfb, #ebedee);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fdfbfb, #ebedee);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    .container {
+        .card {
+            --background: #FFFFFF;
+            --text: black;
+            border-radius: 2px;
+            border-width: 0px;
+            box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, .05);
+        }
+        .table {
+            text-align: center;
+            .path {
+                background-color: dodgerblue;
+                color: white;
+            }
+        }
+    }
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- google font ROBOTO -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <!-- icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- My css -->
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <div class="container pt-4">
+        <div class="row card p-5 mt-5">
+            <div class="h1 col-12 text-center">GAP penalty Affine</div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="">first serial</label>
+                    <input type="text" class="form-control" name="" id="DNA1" placeholder="GCCCATTCG-AG..." value="AGCTCGA">
+                </div>
+                <div class="form-group">
+                    <label for="">second serial</label>
+                    <input type="text" class="form-control" name="" id="DNA2" placeholder="GCCCATTCG-AG..." value="TACAGCTTG">
+                </div>
+                <div class="input-group mt-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">gap affine info</span>
+                    </div>
+                    <input type="number" class="form-control" name="" id="g0" placeholder="g0" value="-3">
+                    <input type="number" class="form-control" name="" id="ge" placeholder="ge" value="-1">
+                    <input type="number" class="form-control" name="" id="match" placeholder="match" value="2">
+                    <input type="number" class="form-control" name="" id="mismatch" placeholder="mismatch" value="-2">
+                </div>
+                <div class="d-flex mt-4">
+                    <button type="button" class="btn btn-outline-primary w-50 mx-auto" onclick="gapAffine()">Start</button>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5 d-none gap">
+            <div class="h1 w-100 text-center">Final Table (M)</div>
+            <table class="table">
+                <tbody id='M'>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="row my-4 d-none gap">
+            <div class="h1 w-100 text-center">Diagonal Table (D)</div>
+            <table class="table">
+                <tbody id='D'>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="row my-4 d-none gap">
+            <div class="h1 w-100 text-center">Horizontal Table (H)</div>
+            <table class="table">
+                <tbody id='H'>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="row my-4 d-none gap text-center">
+            <div class="h1 w-100 text-center">Vertical Table (V)</div>
+            <table class="table">
+                <tbody id='V'>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="my-5" style="width: 100%;border: 2px solid black;"></div>
+
+        <div class="row card p-5 my-5">
+            <div class="col-12">
+                <div class="h1 col-12 text-center">Needleman-Wunsch</div>
+                <div class="form-group">
+                    <label for="">first serial</label>
+                    <input type="text" class="form-control" name="" id="DNA1_Global" placeholder="GCCCATTCG-AG..." value="ACCGATGA">
+                </div>
+                <div class="form-group">
+                    <label for="">second serial</label>
+                    <input type="text" class="form-control" name="" id="DNA2_Global" placeholder="GCCCATTCG-AG..." value="ACGCTA">
+                </div>
+                <div class="input-group mt-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Global alignment info</span>
+                    </div>
+                    <input type="number" class="form-control" name="" id="indel_Global" placeholder="indel" value="-2">
+                    <input type="number" class="form-control" name="" id="match_Global" placeholder="match" value="2">
+                    <input type="number" class="form-control" name="" id="mismatch_Global" placeholder="mismatch" value="-1">
+                </div>
+                <div class="d-flex mt-4">
+                    <button type="button" class="btn btn-outline-primary w-50 mx-auto" onclick="globalAlign()">Start</button>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5 d-none N_Global ">
+            <div class="h1 w-100 text-center">Final Table</div>
+            <table class="table">
+                <tbody id='N_Global'>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>
