@@ -31,8 +31,6 @@ function initTable(dna1, dna2) {
 
     }
 
-    array[1][1] = { value: 0 }
-
     return array;
 }
 
@@ -83,6 +81,8 @@ function gapAffine() {
     let H = initTable(dna1, dna2);
     let V = initTable(dna1, dna2);
     let D = initTable(dna1, dna2);
+
+    V[1][1] = D[1][1] = H[1][1] = M[1][1] = { value: 0 }
 
     for (let i = 2; i < M[0].length; i++) {
 
@@ -281,6 +281,8 @@ function globalAlign() {
     //Tables
     let G = initTable(dna1, dna2);
 
+    /* G[0,0] */
+    G[1][1] = { value: 0 };
     /* G[i,0] */
     for (let i = 2; i < G[0].length; i++) {
 
@@ -358,3 +360,26 @@ function findPrecedentGlobal(array, i, j, match, mismatch, indel) {
 }
 
 /* Clustal algo */
+
+function score(dna1, dna2) {
+
+    let cpt = 0;
+    for (let i = 0; i < dna1.length; i++) {
+
+        cpt += simClustal(dna1[i], dna2[i], match, mismatch, indel);
+
+    }
+}
+
+function simClustal(x, y, match, mismatch, indel) {
+
+    if (x === '-')
+        if (y === '-') return 0;
+        else return indel;
+
+    if (y === '-') return indel;
+
+    if (y === x) return match;
+    else return mismatch;
+
+}
