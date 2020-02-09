@@ -37,18 +37,18 @@ function initTable(dna1, dna2) {
 function drawArray(array, id) {
     let table = document.getElementById(id);
     table.innerHTML = '';
-    for (let j = 0; j < array.length; j++) {
+    for (let iJdid = 0; iJdid < array.length; iJdid++) {
 
         let row = document.createElement('tr');
 
-        for (let i = 0; i < array[0].length; i++) {
+        for (let JJdid = 0; JJdid < array[0].length; JJdid++) {
 
             let cell = document.createElement('td');
 
             try {
-                cell.className += array[j][i].bold ? 'font-weight-bold' : '';
-                cell.innerText = array[j][i].value;
-                if (array[j][i].path && (id === 'M' || id === 'N_Global')) {
+                cell.className += array[iJdid][JJdid].bold ? 'font-weight-bold' : '';
+                cell.innerText = array[iJdid][JJdid].value;
+                if (array[iJdid][JJdid].path && (id === 'M' || id === 'N_Global')) {
                     console.log('color setting');
 
                     cell.classList.add('path');
@@ -286,13 +286,13 @@ function globalAlign() {
     /* G[i,0] */
     for (let i = 2; i < G[0].length; i++) {
 
-        G[1][i] = { value: G[1][i - 1].value - 2 };
+        G[1][i] = { value: G[1][i - 1].value + indel };
 
     }
     /* G[0,j] */
     for (let j = 2; j < G.length; j++) {
 
-        G[j][1] = { value: G[j - 1][1].value - 2 };
+        G[j][1] = { value: G[j - 1][1].value + indel };
 
     }
 
@@ -361,14 +361,126 @@ function findPrecedentGlobal(array, i, j, match, mismatch, indel) {
 
 /* Clustal algo */
 
-function score(dna1, dna2) {
+var series = [
+    document.getElementById('DNA0_Clustal'),
+    document.getElementById('DNA1_Clustal'),
+    document.getElementById('DNA2_Clustal'),
+    document.getElementById('DNA3_Clustal')
+];
+
+/* ui */
+function addInput() {
+
+    let container = document.getElementById('clustal_series');
+    const div = document.createElement('DIV');
+    div.classList.add('mt-2');
+    const label = document.createElement('LABEL');
+    label.innerText = 'S' + container.children.length;
+    const input = document.createElement('INPUT');
+    input.classList.add('form-control');
+    input.id = 'DNA' + container.children.length + '_Clustal';
+    input.placeholder = 'GCCCATTCG-AG...';
+    input.value = 'ACCGATGA';
+    div.appendChild(label);
+    div.appendChild(input);
+    container.appendChild(div);
+
+    series.push(input);
+}
+
+/* Draw score matrix */
+
+function DrawMatrix(array, id) {
+
+
+}
+
+function CreateIteration() {
+    const container = document.getElementById('iterations');
+
+    const iterationContainer = document.createElement('DIV');
+    iterationContainer.id = 'iteration_' + container.children.length + '_container';
+    iterationContainer.className = 'col-12 my-4';
+
+    const title = document.createElement('DIV');
+    title.className = 'h1 w-100 text-center';
+    title.innerText = 'iteration ' + (container.children.length + 1);
+
+    const table = document.createElement('TABLE');
+    table.classList.add('table');
+
+    const tbody = document.createElement('TBODY');
+    tbody.id = 'iteration_' + container.children.length;
+
+    container.appendChild(iterationContainer);
+    iterationContainer.appendChild(title);
+    iterationContainer.appendChild(table);
+    table.appendChild(tbody);
+
+    return tbody.id;
+
+}
+
+/* Core */
+
+function clustalAlign() {
+
+    let indel = parseInt(document.getElementById('indel_Clustal').value, 10);
+    let match = parseInt(document.getElementById('match_Clustal').value, 10);
+    let mismatch = parseInt(document.getElementById('mismatch_Clustal').value, 10);
+
+    /* first iteration */
+    let iteration_0 = initIterationTable(series);
+
+    const iteration_0_id = CreateIteration();
+
+    for (let j = 1; j < iteration_0.length; j++) {
+
+        for (let i = j + 1; i < iteration_0[0].length; i++) {
+
+            const score = score_Clustal(series[j - 1].value, series[i - 1].value, match, mismatch, indel);
+            console.log(score);
+
+            iteration_0[j][i] = { value: score };
+            iteration_0[i][j] = { value: score };
+
+        }
+    }
+
+
+    drawArray(iteration_0, iteration_0_id);
+
+
+}
+
+function initIterationTable(s) {
+
+    const array = [];
+
+    array.push([{ value: '#', bold: true }]);
+
+    for (let i = 0; i < s.length; i++) {
+
+        array[0].push({ value: 'S' + (i + 1), bold: true });
+        array.push([{ value: 'S' + (i + 1), bold: true }])
+
+    }
+
+    return array;
+
+}
+
+function score_Clustal(dna1, dna2, match, mismatch, indel) {
 
     let cpt = 0;
     for (let i = 0; i < dna1.length; i++) {
 
-        cpt += simClustal(dna1[i], dna2[i], match, mismatch, indel);
+        const sim = simClustal(dna1[i], dna2[i], match, mismatch, indel);
+
+        cpt += sim;
 
     }
+    return cpt;
 }
 
 function simClustal(x, y, match, mismatch, indel) {

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- My css -->
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+
 </head>
 
 <body>
@@ -61,7 +61,7 @@
             </table>
         </div>
         <div class="row my-4 d-none gap">
-            <div class="h1 w-100 text-center">Horizontal Table (H)</div>
+            <div class="h1 w-100 text-center">Horizontal Table (V)</div>
             <table class="table">
                 <tbody id='H'>
 
@@ -69,7 +69,7 @@
             </table>
         </div>
         <div class="row my-4 d-none gap text-center">
-            <div class="h1 w-100 text-center">Vertical Table (V)</div>
+            <div class="h1 w-100 text-center">Vertical Table (H)</div>
             <table class="table">
                 <tbody id='V'>
 
@@ -83,19 +83,19 @@
                 <div class="h1 col-12 text-center">Needleman-Wunsch</div>
                 <div class="form-group">
                     <label for="">first serial</label>
-                    <input type="text" class="form-control" name="" id="DNA1_Global" placeholder="GCCCATTCG-AG..." value="ACCGATGA">
+                    <input type="text" class="form-control" name="" id="DNA1_Global" placeholder="GCCCATTCG-AG..." value="cgaccattgtagctacctg">
                 </div>
                 <div class="form-group">
                     <label for="">second serial</label>
-                    <input type="text" class="form-control" name="" id="DNA2_Global" placeholder="GCCCATTCG-AG..." value="ACGCTA">
+                    <input type="text" class="form-control" name="" id="DNA2_Global" placeholder="GCCCATTCG-AG..." value="cgagccattgtagctactg">
                 </div>
                 <div class="input-group mt-4">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Global alignment info</span>
                     </div>
-                    <input type="number" class="form-control" name="" id="indel_Global" placeholder="indel" value="-2">
-                    <input type="number" class="form-control" name="" id="match_Global" placeholder="match" value="2">
-                    <input type="number" class="form-control" name="" id="mismatch_Global" placeholder="mismatch" value="-1">
+                    <input type="number" class="form-control" name="" id="indel_Global" placeholder="indel" value="2">
+                    <input type="number" class="form-control" name="" id="match_Global" placeholder="match" value="0">
+                    <input type="number" class="form-control" name="" id="mismatch_Global" placeholder="mismatch" value="1">
                 </div>
                 <div class="d-flex mt-4">
                     <button type="button" class="btn btn-outline-primary w-50 mx-auto" onclick="globalAlign()">Start</button>
@@ -110,6 +110,47 @@
                 </tbody>
             </table>
         </div>
+        <div class="my-5" style="width: 100%;border: 2px solid black;"></div>
+
+        <div class="row card p-5 my-5">
+            <div class="col-12">
+                <div class="h1 col-12 text-center">Clustal</div>
+                <div id="clustal_series" class="form-group">
+                    <div class="mt-2">
+                        <label>S0</label>
+                        <input type="text" class="form-control" name="" id="DNA0_Clustal" placeholder="GCCCATTCG-AG..." value="cgatgagtcattgtgactg">
+                    </div>
+                    <div class="mt-2">
+                        <label>S1</label>
+                        <input type="text" class="form-control" name="" id="DNA1_Clustal" placeholder="GCCCATTCG-AG..." value="cgagccattgtagctactg">
+                    </div>
+                    <div class="mt-2">
+                        <label>S2</label>
+                        <input type="text" class="form-control" name="" id="DNA2_Clustal" placeholder="GCCCATTCG-AG..." value="cgaccattgtagctacctg">
+                    </div>
+                    <div class="mt-2">
+                        <label>S3</label>
+                        <input type="text" class="form-control" name="" id="DNA3_Clustal" placeholder="GCCCATTCG-AG..." value="cgatgagtcactgtgactg">
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="addInput()">Add series</button>
+                <div class="input-group mt-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Clustal info</span>
+                    </div>
+                    <input type="number" class="form-control" name="" id="indel_Clustal" placeholder="indel" value="2">
+                    <input type="number" class="form-control" name="" id="match_Clustal" placeholder="match" value="0">
+                    <input type="number" class="form-control" name="" id="mismatch_Clustal" placeholder="mismatch" value="1">
+                </div>
+                <div class="d-flex mt-4">
+                    <button type="button" class="btn btn-outline-primary w-50 mx-auto" onclick="clustalAlign()">Start</button>
+                </div>
+            </div>
+        </div>
+        <div id='iterations' class="row">
+
+        </div>
+
     </div>
 
     <footer class="text-start m-3">
@@ -117,6 +158,7 @@
             Made by <a href="https://ilyesbrh.github.io" target="_blank">Ilies bourouh</a> :) 
         </span>
     </footer>
+    <script src='main.js'></script>
 </body>
 
 </html>
