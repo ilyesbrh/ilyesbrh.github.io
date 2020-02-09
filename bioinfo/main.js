@@ -231,23 +231,23 @@ function findPrecedent(array, i, j, match, mismatch) {
     /* diagonal check */
     if ((diag.value + sim(dna1[i - 1], dna2[j - 1], match, mismatch)) === array[j][i].value) {
 
-        return array[j][i].value + ' ' + findPrecedent(array, i - 1, j - 1, match, mismatch);
+        array[j][i].value + ' ' + findPrecedent(array, i - 1, j - 1, match, mismatch);
 
     } else if ((left.value + g0) === array[j][i].value) {
 
-        return array[j][i].value + ' ' + findPrecedent(array, i - 1, j, match, mismatch);
+        array[j][i].value + ' ' + findPrecedent(array, i - 1, j, match, mismatch);
 
     } else if ((up.value + g0) === array[j][i].value) {
 
-        return array[j][i].value + ' ' + findPrecedent(array, i, j - 1, match, mismatch);
+        array[j][i].value + ' ' + findPrecedent(array, i, j - 1, match, mismatch);
 
     } else if ((left.value + ge) === array[j][i].value) {
 
-        return array[j][i].value + ' ' + findPrecedent(array, i - 1, j, match, mismatch);
+        array[j][i].value + ' ' + findPrecedent(array, i - 1, j, match, mismatch);
 
     } else if ((up.value + ge) === array[j][i].value) {
 
-        return array[j][i].value + ' ' + findPrecedent(array, i, j - 1, match, mismatch);
+        array[j][i].value + ' ' + findPrecedent(array, i, j - 1, match, mismatch);
 
     } else {
         console.log('Error :\')');
