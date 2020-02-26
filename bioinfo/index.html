@@ -136,11 +136,19 @@
                 <button type="button" class="btn btn-primary" onclick="addInput()">Add series</button>
                 <div class="input-group mt-4">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">Clustal info</span>
+                        <span class="input-group-text">Aligning Params</span>
                     </div>
-                    <input type="number" class="form-control" name="" id="indel_Clustal" placeholder="indel" value="2">
-                    <input type="number" class="form-control" name="" id="match_Clustal" placeholder="match" value="0">
-                    <input type="number" class="form-control" name="" id="mismatch_Clustal" placeholder="mismatch" value="1">
+                    <input type="number" class="form-control" name="" id="indel_Clustal" placeholder="indel" value="-2">
+                    <input type="number" class="form-control" name="" id="match_Clustal" placeholder="match" value="2">
+                    <input type="number" class="form-control" name="" id="mismatch_Clustal" placeholder="mismatch" value="-1">
+                </div>
+                <div class="input-group mt-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Distance params</span>
+                    </div>
+                    <input type="number" class="form-control" name="" id="indel_Distance" placeholder="indel" value="2">
+                    <input type="number" class="form-control" name="" id="match_Distance" placeholder="match" value="0">
+                    <input type="number" class="form-control" name="" id="mismatch_Distance" placeholder="mismatch" value="1">
                 </div>
                 <div class="d-flex mt-4">
                     <button type="button" class="btn btn-outline-primary w-50 mx-auto" onclick="clustalAlign()">Start</button>

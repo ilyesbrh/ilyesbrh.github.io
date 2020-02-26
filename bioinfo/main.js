@@ -359,7 +359,6 @@ function findPrecedentGlobal(array, i, j, match, mismatch, indel) {
 }
 
 /* Clustal algo */
-
 var series = [
     document.getElementById('DNA0_Clustal'),
     document.getElementById('DNA1_Clustal'),
@@ -367,6 +366,35 @@ var series = [
     document.getElementById('DNA3_Clustal')
 ];
 
+function clustalAlign() {
+
+    params = {
+        indel: parseInt(document.getElementById('indel_Clustal').value, 10),
+        match: parseInt(document.getElementById('match_Clustal').value, 10),
+        mismatch: parseInt(document.getElementById('mismatch_Clustal').value, 10),
+        distanceParams: {
+            indel: parseInt(document.getElementById('indel_Distance').value, 10),
+            mismatch: parseInt(document.getElementById('mismatch_Distance').value, 10),
+            match: parseInt(document.getElementById('match_Distance').value, 10)
+        }
+    };
+
+    /* extract input values */
+    const list = getDnaList(series);
+    console.log('list of ADN\'s');
+    console.log(list);
+
+    /* create distance table */
+    let DistanceMatrix = FillDistanceMatrix(list, params);
+    console.log('Distance matrix');
+    console.log(DistanceMatrix);
+
+    /* fill matrix */
+    //DistanceMatrix = createTreeMatrix(DistanceMatrix, list, params);
+
+
+
+}
 /* ui */
 function addInput() {
 
@@ -420,23 +448,6 @@ function CreateIteration() {
 
 }
 
-function clustalAlign() {
-
-    params = {
-        indel: parseInt(document.getElementById('indel_Clustal').value, 10),
-        match: parseInt(document.getElementById('match_Clustal').value, 10),
-        mismatch: parseInt(document.getElementById('mismatch_Clustal').value, 10),
-    };
-
-    /* extract input values */
-    const list = getDnaList(series);
-    /* create distance table */
-    let DistanceMatrix = FillDistanceMatrix(list);
-    /* fill matrix */
-    DistanceMatrix = FillTreeMatrix(DistanceMatrix, list, params);
-
-
-}
 
 function getDnaList(series) {
     let array = [];
@@ -446,15 +457,31 @@ function getDnaList(series) {
     return array;
 }
 
-function FillDistanceMatrix(list) {
+function FillDistanceMatrix(list, params) {
 
-    
+    let M = CreateMatrix(list.length, list.length);
+
+    for (let i = 0; i < list.length; i++) {
+        for (let j = 0; j < list.length; j++) {
+
+            if (i === j) {
+                M[i][j] === 0;
+            }
+            if (M[j][i] == {}) {
+                M[i][j] = M[j][i];
+            } else {
+                M[i][j] = alignOne2One(list[i], list[j], params);
+            }
+        }
+    }
+
+    return M;
 }
 
-function FillTreeMatrix(DistanceMatrix, list, params) {
+function createTreeMatrix(DistanceMatrix, list, params) {
 
-    for (let i = 0; i < array.length; i++) {
-        for (let j = 0; j < array.length; j++) {
+    for (let i = 0; i < DistanceMatrix.length; i++) {
+        for (let j = 0; j < DistanceMatrix[0].length; j++) {
 
             const alignment = alignOne2One(list[i], list[j], params);
             const score = scoreAlignOne2One(alignment[0], alignment[1], params);
@@ -475,19 +502,13 @@ function alignOne2One(dna1, dna2, params) {
 
     AlignMatrix = FillAlignOne2OneMatrix(AlignMatrix, dna1, dna2, params);
 
-    console.log(AlignMatrix);
-
     let startObj = { i: AlignMatrix.length - 1, j: AlignMatrix[0].length - 1, precedent: [] };
 
     let lastCase = findPrecedentAlignmentOne2One(startObj, AlignMatrix, dna1, dna2, params);
 
-    console.log(lastCase);
-
     let pathsList = extractAlignmentsOne2One(lastCase);
 
-    console.log(pathsList);
-
-    let bestAlignment = ExtractBestPath(pathsList, { indel: 2, mismatch: 1, match: 0 });
+    let bestAlignment = ExtractBestPath(pathsList, params.distanceParams);
 
     return bestAlignment;
 
@@ -598,12 +619,12 @@ function FillAlignN2NMatrix(AlignMatrix, dna1List, dna2List, params) {
 
     /* G[i,0] */
     for (let i = 1; i < AlignMatrix.length; i++)
-        /* Deletion (Top gap) (dna1 = > gap) */
+    /* Deletion (Top gap) (dna1 = > gap) */
         AlignMatrix[i][0] = AlignMatrix[i - 1][0] + simAlignN2N(params.delSequence, 0, dna2List, i, params);
 
     /* G[0,j] */
     for (let j = 1; j < AlignMatrix[0].length; j++)
-        /* Insertion (left gap) (dna2 = > gap) */
+    /* Insertion (left gap) (dna2 = > gap) */
         AlignMatrix[0][j] = AlignMatrix[0][j - 1] + simAlignN2N(params.insSequence, 0, dna1List, j, params);
 
 
@@ -782,9 +803,6 @@ function findPrecedentAlignmentN2N(current, AlignMatrix, dna1List, dna2List, par
 
 function extractAlignmentsOne2One(current) {
 
-
-    console.log('start');
-
     if (current.i === 0 && current.j === 0) {
 
         return [{ seqI: '', seqJ: '' }];
@@ -799,12 +817,12 @@ function extractAlignmentsOne2One(current) {
 
             pastAlignment.forEach(alignment => {
 
-                if (precedent.i === current.i /* (right) deletion (letter i become a gap) */) {
+                if (precedent.i === current.i /* (right) deletion (letter i become a gap) */ ) {
 
                     alignment.seqI += '-';
                     alignment.seqJ += current.letterJ;
 
-                } else if (precedent.j === current.j /* (top) insertion (letter j become a gap) */) {
+                } else if (precedent.j === current.j /* (top) insertion (letter j become a gap) */ ) {
 
                     alignment.seqJ += '-';
                     alignment.seqI += current.letterI;
@@ -847,12 +865,12 @@ function extractAlignmentsN2N(current, j, i) {
 
             pastAlignment.forEach(alignment => {
 
-                if (precedent.i === current.i /* (right) deletion (letter i become a gap) */) {
+                if (precedent.i === current.i /* (right) deletion (letter i become a gap) */ ) {
 
                     alignment.seqI.forEach((s, index) => alignment.seqI[index] += '-');
                     alignment.seqJ.map((s, index) => alignment.seqJ[index] += current.letterJ[index]);
 
-                } else if (precedent.j === current.j /* (top) insertion (letter j become a gap) */) {
+                } else if (precedent.j === current.j /* (top) insertion (letter j become a gap) */ ) {
 
                     alignment.seqI.map((s, index) => alignment.seqI[index] += current.letterI[index]);
                     alignment.seqJ.map((s, index) => alignment.seqJ[index] += '-');
@@ -902,7 +920,6 @@ function scoreAlignOne2One(dna1, dna2, params) {
         cpt += sim;
 
     }
-    console.log(cpt);
 
     return cpt;
 }
