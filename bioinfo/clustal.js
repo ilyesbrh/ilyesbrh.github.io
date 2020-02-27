@@ -24,18 +24,53 @@ function clustalAlign() {
     console.log('list of ADN\'s');
     console.log(list);
 
-    /* create distance table */
+    /* create and fill distance table */
     let DistanceMatrix = FillDistanceMatrix(list, params);
-    console.log('Distance matrix');
-    console.log(DistanceMatrix);
 
-    /* fill matrix */
-    //DistanceMatrix = createTreeMatrix(DistanceMatrix, list, params);
+    let tree = createTree(DistanceMatrix, list);
 
+    console.log('final tree object');
+    console.log(tree);
+
+    const alignment = finalN2Alignment({ s1: tree[0], s2: tree[1] }, params);
+
+    /* aligned sequences */
+    console.log('--------------------');
+    console.log(alignment);
+    console.log('--------------------');
 
 
 }
 
+function createTree(DistanceMatrix, list) {
+
+    while (list.length > 2) {
+        let pos = getMinValue(DistanceMatrix);
+
+        let node = { s1: list[pos.i], s2: list[pos.j] };
+
+        /* to delete always the biggest number first so order in array when deleting wont break */
+        if (pos.i < pos.j) {
+            const temp = pos.i;
+            pos.i = pos.j;
+            pos.j = temp;
+        }
+
+        list.splice(pos.j, 1);
+        list.splice(pos.i, 1);
+
+
+        list.push(node);
+
+        DistanceMatrix = addElement(DistanceMatrix);
+
+        DistanceMatrix = fillElement(DistanceMatrix, distanceBetween, pos, DistanceMatrix.length - 1);
+
+        DistanceMatrix = deletePairOfElements(DistanceMatrix, pos);
+    }
+
+    return list;
+}
 /* ui */
 function addInput() {
 
@@ -57,11 +92,6 @@ function addInput() {
 }
 
 /* Draw score matrix */
-
-function DrawMatrix(array, id) {
-
-
-}
 
 function CreateIteration() {
     const container = document.getElementById('iterations');
@@ -88,7 +118,6 @@ function CreateIteration() {
     return tbody.id;
 
 }
-
 
 function getDnaList(series) {
     let array = [];
@@ -119,18 +148,92 @@ function FillDistanceMatrix(list, params) {
     return M;
 }
 
-function createTreeMatrix(DistanceMatrix, list, params) {
+function getMinValue(matrix) {
 
-    for (let i = 0; i < DistanceMatrix.length; i++) {
-        for (let j = 0; j < DistanceMatrix[0].length; j++) {
+    let I = 0,
+        J = 1;
+    let min = matrix[0][1];
 
-            const alignment = alignOne2One(list[i], list[j], params);
-            const score = scoreAlignOne2One(alignment[0], alignment[1], params);
-            DistanceMatrix[i][j] = score;
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[0].length; j++) {
+
+            if (i === j) continue;
+            if (matrix[i][j] < min) {
+                min = matrix[i][j];
+                I = i;
+                J = j;
+            }
+        }
+    }
+    return { i: I, j: J };
+}
+
+function distanceBetween(matrix, pos, element) {
+    return (matrix[pos.i][element] + matrix[pos.j][element] - matrix[pos.i][pos.j]) / 2;
+}
+
+function addElement(matrix) {
+
+    matrix.push([]);
+
+    for (let index = 0; index < matrix.length; index++) {
+        matrix[matrix.length - 1].push({});
+        if (index !== matrix.length - 1) {
+            matrix[index].push({});
         }
     }
 
-    return DistanceMatrix;
+    return matrix;
+}
+
+function fillElement(matrix, valueFunction, pos /* {i,j} */ , target) {
+
+    for (let index = 0; index < matrix.length; index++) {
+
+        if (index === pos.i || index === pos.j) matrix[target][index] = 0;
+        if (index === target) matrix[target][index] = 0;
+
+        matrix[target][index] = valueFunction(matrix, pos, index);
+    }
+
+    for (let index = 0; index < matrix.length; index++) {
+        matrix[index][target] = matrix[target][index];
+    }
+
+    matrix[matrix.length - 1][matrix.length - 1] = 0;
+
+    return matrix;
+}
+
+function deletePairOfElements(matrix, pos /* {i,j} */ ) {
+
+    matrix.splice(pos.i, 1);
+    matrix.splice(pos.j, 1);
+
+    for (let i = 0; i < matrix.length; i++) {
+        matrix[i].splice(pos.i, 1);
+        matrix[i].splice(pos.j, 1);
+    }
+    return matrix;
+}
+
+function finalN2Alignment(current, params) {
+
+    let seq1 = [];
+    if (typeof current.s1 === 'string' || current.s1 instanceof String) {
+        seq1.push(current.s1);
+    } else {
+        seq1 = finalN2Alignment(current.s1, params);
+    }
+    let seq2 = [];
+    if (typeof current.s2 === 'string' || current.s2 instanceof String) {
+        seq2.push(current.s2);
+    } else {
+        seq2 = finalN2Alignment(current.s2, params);
+    }
+
+    return alignN2N(seq1, seq2, params);
+
 }
 
 /* Global Alignments 1 To 1 */
@@ -167,37 +270,19 @@ function alignN2N(dna1List, dna2List, params) {
     for (let index = 0; index < dna1List.length; index++) params.delSequence.push('-');
     for (let index = 0; index < dna2List.length; index++) params.insSequence.push('-');
 
-    console.log('DNA READY TO align');
-    console.log(dna1List);
-    console.log(dna2List);
-
     let AlignMatrix = CreateMatrix(dna1List[0].length, dna2List[0].length);
 
     AlignMatrix = FillAlignN2NMatrix(AlignMatrix, dna1List, dna2List, params);
-
-    console.log('Matrix Filled');
-    console.log(AlignMatrix);
 
     let startObj = { i: AlignMatrix.length - 1, j: AlignMatrix[0].length - 1, precedent: [] };
 
     let lastCase = findPrecedentAlignmentN2N(startObj, AlignMatrix, dna1List, dna2List, params);
 
-    console.log('path');
-    console.log(lastCase);
+    const alignment = extractAlignmentsN2N(lastCase, dna1List.length, dna2List.length)[0];
 
-    let pathsList = extractAlignmentsN2N(lastCase, dna1List.length, dna2List.length);
+    return [...alignment.seqI, ...alignment.seqJ];
 
-    /* aligned sequences */
-    pathsList.forEach(alignment => {
-        alignment.seqI.forEach(seq => {
-            console.log(seq);
-        });
-        alignment.seqJ.forEach(seq => {
-            console.log(seq);
-        });
-        console.log('--------------------');
 
-    });
 
 }
 
