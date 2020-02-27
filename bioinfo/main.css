@@ -25,4 +25,26 @@ body .container .table .path {
   background-color: dodgerblue;
   color: white;
 }
+
+/* optional Tree visualization Container STYLES */
+.chart {
+  width: 100%;
+  border-radius: 3px;
+}
+
+.node {
+  border: 2px solid #C8C8C8;
+}
+
+.node p {
+  font-size: 20px;
+  padding: 12px;
+}
+
+p.node-name {
+  color: blue;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 0;
+}
 /*# sourceMappingURL=main.css.map */

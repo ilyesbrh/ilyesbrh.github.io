@@ -24,21 +24,27 @@ function clustalAlign() {
     console.log('list of ADN\'s');
     console.log(list);
 
+    const originalList = [...list];
+
     /* create and fill distance table */
     let DistanceMatrix = FillDistanceMatrix(list, params);
 
     let tree = createTree(DistanceMatrix, list);
 
+    /* visualizer.js */
+    showTree({ s1: tree[0], s2: tree[1] }, originalList, params);
+
     console.log('final tree object');
     console.log(tree);
 
+    /* 
     const alignment = finalN2NAlignment({ s1: tree[0], s2: tree[1] }, params);
 
-    /* aligned sequences */
+    // aligned sequences 
     console.log('--------------------');
     console.log(alignment);
     console.log('--------------------');
-
+    */
 
 }
 
@@ -122,7 +128,7 @@ function CreateIteration() {
 function getDnaList(series) {
     let array = [];
     series.forEach(element => {
-        array.push(element.value);
+        array.push(element.value.toUpperCase());
     });
     return array;
 }
