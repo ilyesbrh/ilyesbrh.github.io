@@ -32,7 +32,7 @@ function clustalAlign() {
     console.log('final tree object');
     console.log(tree);
 
-    const alignment = finalN2Alignment({ s1: tree[0], s2: tree[1] }, params);
+    const alignment = finalN2NAlignment({ s1: tree[0], s2: tree[1] }, params);
 
     /* aligned sequences */
     console.log('--------------------');
@@ -56,8 +56,8 @@ function createTree(DistanceMatrix, list) {
             pos.j = temp;
         }
 
-        list.splice(pos.j, 1);
         list.splice(pos.i, 1);
+        list.splice(pos.j, 1);
 
 
         list.push(node);
@@ -217,19 +217,19 @@ function deletePairOfElements(matrix, pos /* {i,j} */ ) {
     return matrix;
 }
 
-function finalN2Alignment(current, params) {
+function finalN2NAlignment(current, params) {
 
     let seq1 = [];
     if (typeof current.s1 === 'string' || current.s1 instanceof String) {
         seq1.push(current.s1);
     } else {
-        seq1 = finalN2Alignment(current.s1, params);
+        seq1 = finalN2NAlignment(current.s1, params);
     }
     let seq2 = [];
     if (typeof current.s2 === 'string' || current.s2 instanceof String) {
         seq2.push(current.s2);
     } else {
-        seq2 = finalN2Alignment(current.s2, params);
+        seq2 = finalN2NAlignment(current.s2, params);
     }
 
     return alignN2N(seq1, seq2, params);
