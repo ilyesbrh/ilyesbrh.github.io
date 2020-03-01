@@ -1,3 +1,4 @@
+/* Clustal align */
 var simple_chart_config = {
 
     chart: {
@@ -100,4 +101,78 @@ function createSimpleNode(seq, list) {
             desc: list[list.indexOf(seq)]
         }
     }
+}
+
+/* Local Align */
+
+function visualizeAlignLocalTable(AlignMatrix, dna2, dna1) {
+
+
+    AlignMatrix = [
+        ['#', ...dna1.split('')], ...AlignMatrix
+    ];
+
+    for (let i = 1; i < AlignMatrix.length; i++) {
+        AlignMatrix[i] = [dna2[i - 1], ...AlignMatrix[i]];
+    }
+
+    for (let i = 0; i < AlignMatrix.length; i++) {
+        for (let j = 0; j < AlignMatrix[i].length; j++) {
+            AlignMatrix[i][j] = { bold: false, path: false, value: AlignMatrix[i][j] };
+        }
+
+    }
+
+    return AlignMatrix;
+}
+
+function visualizeLocalPath(visualizationTable, current, color) {
+
+    visualizationTable[current.i + 1][current.j + 1].path = color;
+    for (let i = 0; i < current.precedent.length; i++) {
+        visualizeLocalPath(visualizationTable, current.precedent[i], color);
+    }
+
+}
+
+function drawLocalArray(array, id) {
+    let table = document.getElementById(id);
+    table.parentElement.parentElement.classList.remove('d-none');
+    table.innerHTML = '';
+    for (let I = 0; I < array.length; I++) {
+
+        let row = document.createElement('tr');
+
+        for (let J = 0; J < array[0].length; J++) {
+
+            let cell = document.createElement('td');
+
+            try {
+                cell.className += array[I][J].bold ? 'font-weight-bold' : '';
+                cell.innerText = array[I][J].value;
+                if (array[I][J].path) {
+
+                    cell.style.color = 'white';
+                    cell.style.backgroundColor = array[I][J].path;
+
+                }
+            } catch (error) {
+                cell.innerText = 'X';
+                cell.style.color = 'red';
+            }
+            row.appendChild(cell);
+        }
+
+        table.appendChild(row);
+
+    }
+}
+/* Utility */
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }

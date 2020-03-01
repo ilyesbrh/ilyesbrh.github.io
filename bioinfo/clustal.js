@@ -8,7 +8,7 @@ var series = [
 
 function clustalAlign() {
 
-    params = {
+    let params = {
         indel: parseInt(document.getElementById('indel_Clustal').value, 10),
         match: parseInt(document.getElementById('match_Clustal').value, 10),
         mismatch: parseInt(document.getElementById('mismatch_Clustal').value, 10),

@@ -1,4 +1,4 @@
-function initTable(dna1, dna2) {
+function visualizeAlignLocal(dna1, dna2) {
 
     array = [];
 
@@ -77,10 +77,10 @@ function gapAffine() {
     let match = parseInt(document.getElementById('match').value, 10);
 
     //Tables
-    let M = initTable(dna1, dna2);
-    let H = initTable(dna1, dna2);
-    let V = initTable(dna1, dna2);
-    let D = initTable(dna1, dna2);
+    let M = visualizeAlignLocal(dna1, dna2);
+    let H = visualizeAlignLocal(dna1, dna2);
+    let V = visualizeAlignLocal(dna1, dna2);
+    let D = visualizeAlignLocal(dna1, dna2);
 
     V[1][1] = D[1][1] = H[1][1] = M[1][1] = { value: 0 }
 
@@ -278,7 +278,7 @@ function globalAlign() {
     let dna2 = '-' + document.getElementById('DNA2_Global').value;
 
     //Tables
-    let G = initTable(dna1, dna2);
+    let G = visualizeAlignLocal(dna1, dna2);
 
     /* G[0,0] */
     G[1][1] = { value: 0 };
