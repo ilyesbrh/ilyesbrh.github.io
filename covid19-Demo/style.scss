@@ -13,8 +13,11 @@ body {
         width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: start;
-        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
+        @media (min-width: 768px) {
+            align-items: flex-start;
+        }
         transition: all 1.3s step-start;
         .card-container {
             transition: all 2s ease;
@@ -26,7 +29,6 @@ body {
             width: 95%;
             @media (min-width: 340px) {
                 width: 95%;
-                margin-left: 10px;
                 opacity: 0.9;
             }
             /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
