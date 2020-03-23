@@ -39,36 +39,29 @@ function init() {
 
 
 function fillData(data) {
-    for (let index = 0; index < 4; index++) {
 
-        data.predictions[index].disease;
-        document.body.getElementsByClassName('percent')[index].innerText = (data.predictions[index].confidence * 100 | 0) + '%';
-        document.body.getElementsByClassName('percentage')[index].style.width = (data.predictions[index].confidence * 100 | 0) + '%';
-        document.body.getElementsByClassName('Dname')[index].innerText = data.predictions[index].disease;
+    for (let index = 0; index < 2; index++) {
+
+        document.body.getElementsByClassName('percent')[index].innerText = (data.predictions[index].probability * 100 | 0) + '%';
+        document.body.getElementsByClassName('percentage')[index].style.width = (data.predictions[index].probability * 100 | 0) + '%';
+        document.body.getElementsByClassName('Dname')[index].innerText = data.predictions[index].label;
     }
 
-    document.getElementById('tryAgain').innerText = 'Try again (' + data.tries + ')';
-    if (data.tries < 1) {
-        document.getElementById('tryAgain').innerText = 'no more tries available :( ';
-        document.getElementById('tryAgain').setAttribute('disabled', 'true');
-    } else {
-        document.getElementById('tryAgain').onclick = () => {
-            /* remove result show */
-            results.classList.remove('d-flex');
-            results.classList.add('d-none');
-            /* add upload layout */
-            cardContainer.classList.add('select');
-            span.classList.remove('d-none');
-            icon.classList.remove('d-none');
-            img.classList.add('d-none');
-            /* center card again */
-            cardContainer.classList.add('my-auto');
-            cardContainer.classList.remove('my-5');
+    document.getElementById('tryAgain').innerText = 'Try again';
+    document.getElementById('tryAgain').onclick = () => {
+        /* remove result show */
+        results.classList.remove('d-flex');
+        results.classList.add('d-none');
+        /* add upload layout */
+        cardContainer.classList.add('select');
+        span.classList.remove('d-none');
+        icon.classList.remove('d-none');
+        img.classList.add('d-none');
+        /* center card again */
+        cardContainer.classList.add('my-auto');
+        cardContainer.classList.remove('my-5');
 
-        };
-
-    }
-
+    };
 }
 
 function openUpload() {
@@ -84,6 +77,8 @@ function changeImage(event) {
 
     img.src = URL.createObjectURL(event.target.files[0]);
     image = event.target.files[0];
+
+    console.log('gere');
 
     cardContainer.classList.remove('select');
     span.classList.add('d-none');
@@ -117,6 +112,7 @@ function upload() {
         return;
     }
 
+    Token = 'azer';
     if (Token && Token.length !== 0) {
 
 
@@ -131,12 +127,13 @@ function upload() {
         formData.append('image', file, file.filename + '.png');
         formData.append('token', Token);
 
-        const url = 'https://farmy-backend.herokuapp.com/api/v1/test-model';
+        const url = 'http://localhost:8080';
 
         axios.post(url, formData)
             .then(function(res) {
                 console.log(res);
                 fillData(res.data);
+
                 /* show result pane */
                 img.classList.remove('d-none');
                 spinner.classList.add('d-none');
