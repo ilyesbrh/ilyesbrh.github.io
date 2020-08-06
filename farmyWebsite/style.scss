@@ -1,0 +1,831 @@
+/* Variables */
+
+// Colors
+$Maincolor: #a5da76;
+$Color-nav-bar: #c0c0c1;
+$title: #000000;
+$color-of-text: #8b959e;
+$bg-for-hero-section: #f8fcff;
+
+/* Elements Styling */
+
+// navbar
+
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 72px;
+  width: 100%;
+
+  background-color: $bg-for-hero-section;
+
+  transition: all 0.5s;
+  .logo {
+    width: 128px;
+    height: 37px;
+
+    margin-left: 2.7%;
+    margin-right: auto;
+  }
+
+  .link {
+    @extend .navbar;
+
+    margin-right: 3%;
+
+    text-decoration: none;
+    &.active {
+      @extend .navbar-selected;
+
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0px;
+        bottom: -2.5px;
+        width: 18px;
+        height: 3px;
+        border-radius: 1px;
+        background-color: $Maincolor;
+      }
+    }
+  }
+
+  .call-to-action {
+    @extend .button-nav;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 169.7px;
+    height: 38.9px;
+
+    margin-right: 56px;
+
+    margin-left: auto;
+
+    border: none;
+    border-radius: 6px;
+
+    box-shadow: 3px 3px 20px 0 rgba(0, 0, 0, 0.16);
+    background-color: $Maincolor;
+
+    cursor: pointer;
+  }
+}
+
+html:not([data-scroll="0"]) .nav-bar {
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+// header
+
+.header {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: $bg-for-hero-section;
+
+  overflow: hidden;
+  .background-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+  }
+  .content {
+    position: absolute;
+    top: 90px;
+    left: 11.4%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    max-width: 480px;
+    .title {
+      @extend .hero-text;
+    }
+    .actions {
+      display: flex;
+
+      margin-top: 42px;
+      .primary {
+        @extend .hero-button-text;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          margin-left: 8px;
+        }
+
+        width: 211px;
+        height: 52px;
+
+        margin-right: 28px;
+
+        border: none;
+        border-radius: 6px;
+
+        background-color: $Maincolor;
+
+        box-shadow: 3px 3px 20px 0 rgba(0, 0, 0, 0.16);
+
+        cursor: pointer;
+      }
+      .secondary {
+        @extend .hero-learn-more;
+
+        border: none;
+
+        background-color: transparent;
+
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// about-us
+
+.about-us {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  width: calc(100% - 120px);
+
+  margin-top: 120px;
+  margin-bottom: 120px;
+
+  padding-left: 60px;
+  padding-right: 60px;
+
+  > .title {
+    @extend .section-title;
+
+    width: 100%;
+
+    text-align: left;
+  }
+  .illustration {
+    width: 40%;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    width: 45%;
+    .title {
+      @extend .about-us-titleour-team;
+    }
+    .description {
+      @extend .about-us-textstep-text;
+    }
+  }
+}
+
+// Our team
+
+.our-team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: calc(100% - 120px);
+
+  padding-left: 60px;
+  padding-right: 60px;
+
+  margin-bottom: 60px;
+  > .title {
+    @extend .section-title;
+
+    width: 100%;
+
+    text-align: left;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 532px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: 66px;
+
+    .title {
+      @extend .about-us-titleour-team;
+      width: 100%;
+      text-align: start;
+    }
+    .quote {
+      @extend .our-team-quote;
+
+      width: 100%;
+      max-width: 506px;
+
+      margin-top: 38px;
+      margin-left: 26px;
+      margin-bottom: 12px;
+    }
+    .writer {
+      @extend .writer;
+
+      width: 100%;
+      text-align: end;
+    }
+  }
+
+  .avatars {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    max-width: 600px;
+
+    .avatar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      width: 174px;
+      height: 210px;
+
+      margin-bottom: 28px;
+      margin-right: 20px;
+
+      border-radius: 20px;
+
+      box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.16);
+      background-color: #ffffff;
+
+      > img {
+        width: 109px;
+        height: 109px;
+
+        margin-top: 12px;
+      }
+      .name {
+        @extend .member-name;
+        margin-top: 5px;
+      }
+      .position {
+        @extend .member-post;
+        margin-top: 8px;
+      }
+      .social-media {
+        display: flex;
+        justify-content: space-around;
+        width: 90%;
+        margin-top: 8px;
+
+        > img {
+          width: 12px;
+          height: 12px;
+
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+// how it work
+
+.how-it-work {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: calc(100% - 120px);
+
+  padding-left: 60px;
+  padding-right: 60px;
+
+  > .title {
+    @extend .section-title;
+
+    width: 100%;
+
+    text-align: left;
+  }
+
+  .step {
+    display: flex;
+    align-items: center;
+    &.reverse {
+      flex-direction: row-reverse;
+    }
+    justify-content: space-around;
+
+    width: 100%;
+    max-width: 1100px;
+
+    margin-bottom: 120px;
+    .illustration {
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      max-width: 480px;
+      .title {
+        @extend .how-it-work-step-title;
+
+        margin-bottom: 32px;
+      }
+      .description {
+        @extend .about-us-textstep-text;
+      }
+    }
+  }
+}
+
+// testimonial
+
+// contact-us
+
+.contact-us {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+
+  width: calc(100% - 120px);
+
+  padding-left: 60px;
+  padding-right: 60px;
+
+  margin-bottom: 120px;
+  > .title {
+    @extend .section-title;
+
+    flex-shrink: 0;
+
+    width: 100%;
+
+    text-align: left;
+  }
+  .illustration {
+    position: relative;
+    width: 40%;
+    left: -50px;
+  }
+  .form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    width: 60%;
+    height: fit-content;
+
+    .input {
+      @extend .input-text;
+
+      height: 48px;
+
+      margin-bottom: 12px;
+
+      padding-left: 16px;
+
+      border: none;
+      border-radius: 16px;
+      background-color: #f9f9f9;
+    }
+
+    .text-area {
+      height: 160px;
+      padding-top: 20px;
+    }
+    .half {
+      width: calc(48% - 16px);
+    }
+    .full {
+      width: calc(100%);
+    }
+    .send {
+      @extend .button-nav;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 169.7px;
+      height: 38.9px;
+
+      margin-top: 28px;
+      margin-right: 0;
+      margin-left: auto;
+
+      border: none;
+      border-radius: 6px;
+
+      box-shadow: 3px 3px 20px 0 rgba(0, 0, 0, 0.16);
+      background-color: $Maincolor;
+
+      cursor: pointer;
+    }
+  }
+}
+
+// footer
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  width: calc(100% - 62px);
+
+  padding: 31px;
+
+  background-color: $Maincolor;
+  .social-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      margin-right: 12px;
+    }
+  }
+  .divider {
+    width: calc(100% - 14%);
+    height: 2px;
+
+    margin-left: 7%;
+    margin-right: 7%;
+
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+    border-radius: 1px;
+
+    background-color: white;
+  }
+  .copyrights {
+    @extend .footer-copyrights;
+  }
+}
+
+// custom select
+
+div.dropdown {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+div.dropdown > div.caption {
+  @extend .input-text;
+
+  background-color: #f2f2f2;
+  padding: 11px 24px;
+
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+div.dropdown > div.list {
+  position: absolute;
+  background-color: #f2f2f2;
+  width: 100%;
+  border-radius: 0 0 3px 3px;
+  display: none;
+}
+
+div.dropdown > div.list > div.item {
+  @extend .input-text;
+  padding: 11px 24px;
+  cursor: pointer;
+}
+
+div.dropdown > div.list > div.item.selected {
+  font-weight: bold;
+}
+
+div.dropdown > div.caption:hover,
+div.dropdown > div.list > div.item:hover {
+  background-color: white;
+  color: $color-of-text;
+}
+
+div.dropdown.open > div.caption {
+  border-radius: 3px 3px 0 0;
+  border-bottom: solid 1px #999;
+}
+
+div.dropdown.open > div.list {
+  display: block;
+}
+
+/* General styling */
+* {
+  outline: none;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  width: 100vw;
+
+  max-width: 100vw;
+  min-height: 100vh;
+
+  margin: 0px;
+  padding: 0px;
+
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Fonts */
+@font-face {
+  font-family: Montserrat;
+  src: url(/assets/fonts/Montserrat-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(/assets/fonts/Montserrat-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(/assets/fonts/Montserrat-ExtraBold.ttf) format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: Poppins;
+  src: url(/assets/fonts/Poppins-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: Poppins;
+  src: url(/assets/fonts/Poppins-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: Poppins;
+  src: url(/assets/fonts/Poppins-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+}
+.hero-text {
+  font-family: Poppins;
+  font-size: 34px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  text-align: left;
+  color: $title;
+}
+.how-it-work-step-title {
+  font-family: Poppins;
+  font-size: 25px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.72;
+  letter-spacing: normal;
+  text-align: left;
+  color: $title;
+}
+.about-us-titleour-team {
+  font-family: Poppins;
+  font-size: 25px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.24;
+  letter-spacing: normal;
+  text-align: left;
+  color: $title;
+}
+.section-title {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: 0.6px;
+  text-align: left;
+  color: $title;
+
+  margin-bottom: 60px;
+
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -2.5px;
+    width: 18px;
+    height: 3px;
+    border-radius: 1px;
+    background-color: $Maincolor;
+  }
+}
+.navbar {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.22;
+  letter-spacing: normal;
+  text-align: left;
+  color: $Color-nav-bar;
+}
+.navbar-selected {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.22;
+  letter-spacing: normal;
+  text-align: left;
+  color: $title;
+}
+.testmonial-card-title {
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.78;
+  letter-spacing: normal;
+  text-align: left;
+  color: $title;
+}
+.about-us-textstep-text {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.94;
+  letter-spacing: 0.54px;
+  text-align: left;
+  color: $color-of-text;
+}
+.our-team-quote {
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.67;
+  letter-spacing: 0.54px;
+  text-align: left;
+  color: $title;
+}
+.button-nav {
+  font-family: Poppins;
+  font-size: 17px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.53;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+.writer {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: 0.48px;
+  color: $title;
+}
+.form-button {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.56;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+.footer-copyrights {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: 0.48px;
+  text-align: left;
+  color: #ffffff;
+}
+.hero-button-text {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+.hero-learn-more {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: $title;
+}
+.input-text {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.94;
+  letter-spacing: normal;
+  text-align: left;
+  color: $title;
+}
+.member-name {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+  text-align: left;
+  color: $title;
+}
+.testmonial-text {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: normal;
+  text-align: left;
+  color: $title;
+}
+.member-post {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.83;
+  letter-spacing: normal;
+  text-align: left;
+  color: $title;
+}

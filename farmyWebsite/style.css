@@ -1,0 +1,869 @@
+/* Variables */
+/* Elements Styling */
+.nav-bar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 72px;
+  width: 100%;
+  background-color: #f8fcff;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.nav-bar .logo {
+  width: 128px;
+  height: 37px;
+  margin-left: 2.7%;
+  margin-right: auto;
+}
+
+.nav-bar .link {
+  margin-right: 3%;
+  text-decoration: none;
+}
+
+.nav-bar .link.active {
+  position: relative;
+}
+
+.nav-bar .link.active:after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -2.5px;
+  width: 18px;
+  height: 3px;
+  border-radius: 1px;
+  background-color: #a5da76;
+}
+
+.nav-bar .call-to-action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 169.7px;
+  height: 38.9px;
+  margin-right: 56px;
+  margin-left: auto;
+  border: none;
+  border-radius: 6px;
+  -webkit-box-shadow: 3px 3px 20px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 3px 3px 20px 0 rgba(0, 0, 0, 0.16);
+  background-color: #a5da76;
+  cursor: pointer;
+}
+
+html:not([data-scroll="0"]) .nav-bar {
+  -webkit-box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8fcff;
+  overflow: hidden;
+}
+
+.header .background-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.header .content {
+  position: absolute;
+  top: 90px;
+  left: 11.4%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  max-width: 480px;
+}
+
+.header .content .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 42px;
+}
+
+.header .content .actions .primary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 211px;
+  height: 52px;
+  margin-right: 28px;
+  border: none;
+  border-radius: 6px;
+  background-color: #a5da76;
+  -webkit-box-shadow: 3px 3px 20px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 3px 3px 20px 0 rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+}
+
+.header .content .actions .primary img {
+  margin-left: 8px;
+}
+
+.header .content .actions .secondary {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.about-us {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: calc(100% - 120px);
+  margin-top: 120px;
+  margin-bottom: 120px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.about-us > .title {
+  width: 100%;
+  text-align: left;
+}
+
+.about-us .illustration {
+  width: 40%;
+}
+
+.about-us .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 45%;
+}
+
+.our-team {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: calc(100% - 120px);
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-bottom: 60px;
+}
+
+.our-team > .title {
+  width: 100%;
+  text-align: left;
+}
+
+.our-team .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 532px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 66px;
+}
+
+.our-team .content .title {
+  width: 100%;
+  text-align: start;
+}
+
+.our-team .content .quote {
+  width: 100%;
+  max-width: 506px;
+  margin-top: 38px;
+  margin-left: 26px;
+  margin-bottom: 12px;
+}
+
+.our-team .content .writer {
+  width: 100%;
+  text-align: end;
+}
+
+.our-team .avatars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 600px;
+}
+
+.our-team .avatars .avatar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 174px;
+  height: 210px;
+  margin-bottom: 28px;
+  margin-right: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+}
+
+.our-team .avatars .avatar > img {
+  width: 109px;
+  height: 109px;
+  margin-top: 12px;
+}
+
+.our-team .avatars .avatar .name {
+  margin-top: 5px;
+}
+
+.our-team .avatars .avatar .position {
+  margin-top: 8px;
+}
+
+.our-team .avatars .avatar .social-media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 90%;
+  margin-top: 8px;
+}
+
+.our-team .avatars .avatar .social-media > img {
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+}
+
+.how-it-work {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: calc(100% - 120px);
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.how-it-work > .title {
+  width: 100%;
+  text-align: left;
+}
+
+.how-it-work .step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  max-width: 1100px;
+  margin-bottom: 120px;
+}
+
+.how-it-work .step.reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.how-it-work .step .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 480px;
+}
+
+.how-it-work .step .content .title {
+  margin-bottom: 32px;
+}
+
+.contact-us {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: calc(100% - 120px);
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-bottom: 120px;
+}
+
+.contact-us > .title {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.contact-us .illustration {
+  position: relative;
+  width: 40%;
+  left: -50px;
+}
+
+.contact-us .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 60%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.contact-us .form .input {
+  height: 48px;
+  margin-bottom: 12px;
+  padding-left: 16px;
+  border: none;
+  border-radius: 16px;
+  background-color: #f9f9f9;
+}
+
+.contact-us .form .text-area {
+  height: 160px;
+  padding-top: 20px;
+}
+
+.contact-us .form .half {
+  width: calc(48% - 16px);
+}
+
+.contact-us .form .full {
+  width: calc(100%);
+}
+
+.contact-us .form .send {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 169.7px;
+  height: 38.9px;
+  margin-top: 28px;
+  margin-right: 0;
+  margin-left: auto;
+  border: none;
+  border-radius: 6px;
+  -webkit-box-shadow: 3px 3px 20px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 3px 3px 20px 0 rgba(0, 0, 0, 0.16);
+  background-color: #a5da76;
+  cursor: pointer;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: calc(100% - 62px);
+  padding: 31px;
+  background-color: #a5da76;
+}
+
+.footer .social-media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer .social-media img {
+  margin-right: 12px;
+}
+
+.footer .divider {
+  width: calc(100% - 14%);
+  height: 2px;
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border-radius: 1px;
+  background-color: white;
+}
+
+div.dropdown {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+div.dropdown > div.caption {
+  background-color: #f2f2f2;
+  padding: 11px 24px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+div.dropdown > div.list {
+  position: absolute;
+  background-color: #f2f2f2;
+  width: 100%;
+  border-radius: 0 0 3px 3px;
+  display: none;
+}
+
+div.dropdown > div.list > div.item {
+  padding: 11px 24px;
+  cursor: pointer;
+}
+
+div.dropdown > div.list > div.item.selected {
+  font-weight: bold;
+}
+
+div.dropdown > div.caption:hover,
+div.dropdown > div.list > div.item:hover {
+  background-color: white;
+  color: #8b959e;
+}
+
+div.dropdown.open > div.caption {
+  border-radius: 3px 3px 0 0;
+  border-bottom: solid 1px #999;
+}
+
+div.dropdown.open > div.list {
+  display: block;
+}
+
+/* General styling */
+* {
+  outline: none;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100vw;
+  max-width: 100vw;
+  min-height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Fonts */
+@font-face {
+  font-family: Montserrat;
+  src: url(/assets/fonts/Montserrat-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(/assets/fonts/Montserrat-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(/assets/fonts/Montserrat-ExtraBold.ttf) format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(/assets/fonts/Poppins-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(/assets/fonts/Poppins-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(/assets/fonts/Poppins-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+.hero-text, .header .content .title {
+  font-family: Poppins;
+  font-size: 34px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+}
+
+.how-it-work-step-title, .how-it-work .step .content .title {
+  font-family: Poppins;
+  font-size: 25px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.72;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+}
+
+.about-us-titleour-team, .about-us .content .title, .our-team .content .title {
+  font-family: Poppins;
+  font-size: 25px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.24;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+}
+
+.section-title, .about-us > .title, .our-team > .title, .how-it-work > .title, .contact-us > .title {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: 0.6px;
+  text-align: left;
+  color: #000000;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.section-title:after, .about-us > .title:after, .our-team > .title:after, .how-it-work > .title:after, .contact-us > .title:after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -2.5px;
+  width: 18px;
+  height: 3px;
+  border-radius: 1px;
+  background-color: #a5da76;
+}
+
+.navbar, .nav-bar .link {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.22;
+  letter-spacing: normal;
+  text-align: left;
+  color: #c0c0c1;
+}
+
+.navbar-selected, .nav-bar .link.active {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.22;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+}
+
+.testmonial-card-title {
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.78;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+}
+
+.about-us-textstep-text, .about-us .content .description, .how-it-work .step .content .description {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.94;
+  letter-spacing: 0.54px;
+  text-align: left;
+  color: #8b959e;
+}
+
+.our-team-quote, .our-team .content .quote {
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.67;
+  letter-spacing: 0.54px;
+  text-align: left;
+  color: #000000;
+}
+
+.button-nav, .nav-bar .call-to-action, .contact-us .form .send {
+  font-family: Poppins;
+  font-size: 17px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.53;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+
+.writer, .our-team .content .writer {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: 0.48px;
+  color: #000000;
+}
+
+.form-button {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.56;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+
+.footer-copyrights, .footer .copyrights {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: 0.48px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.hero-button-text, .header .content .actions .primary {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+
+.hero-learn-more, .header .content .actions .secondary {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+}
+
+.input-text, .contact-us .form .input, div.dropdown > div.caption, div.dropdown > div.list > div.item {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.94;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+}
+
+.member-name, .our-team .avatars .avatar .name {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+}
+
+.testmonial-text {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+}
+
+.member-post, .our-team .avatars .avatar .position {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.83;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+}
+/*# sourceMappingURL=style.css.map */

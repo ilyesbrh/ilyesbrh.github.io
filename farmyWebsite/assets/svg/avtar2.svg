@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="109" height="109" viewBox="0 0 109 109">
+  <defs>
+    <clipPath id="clip-path">
+      <circle id="Ellipse_31" data-name="Ellipse 31" cx="54.5" cy="54.5" r="54.5" transform="translate(0.417 0.372)" fill="#a5da76"/>
+    </clipPath>
+  </defs>
+  <g id="Groupe_175" data-name="Groupe 175" transform="translate(-0.417 -0.372)">
+    <circle id="Ellipse_32" data-name="Ellipse 32" cx="54.5" cy="54.5" r="54.5" transform="translate(0.417 0.372)" fill="#a5da76"/>
+    <g id="Groupe_de_masques_3" data-name="Groupe de masques 3" transform="translate(0 0)" clip-path="url(#clip-path)">
+      <g id="Groupe_12" data-name="Groupe 12" transform="translate(20.871 9.361)">
+        <g id="Groupe_8" data-name="Groupe 8" transform="translate(4.154 9.846)">
+          <g id="Groupe_1" data-name="Groupe 1" transform="translate(7.824)">
+            <rect id="Rectangle_2" data-name="Rectangle 2" width="12.595" height="21.724" transform="translate(15.738 53.815)" fill="#ffb381"/>
+            <path id="Tracé_1" data-name="Tracé 1" d="M239.588,164.951a9.534,9.534,0,0,0,12.595,0v-7.069H239.588Z" transform="translate(-223.85 -104.067)" fill="#ffb381" style="mix-blend-mode: multiply;isolation: isolate"/>
+            <path id="Tracé_2" data-name="Tracé 2" d="M255.388,77.422c-.864-9.455-15.039-13.578-22.358-13.516-8.079.069-19.251,3.768-20.144,13.528a166.785,166.785,0,0,0-.767,17.641c.08,5.314-.318,11.386,1.362,16.493,2.6,7.887,12.52,9.811,19.487,11.772a5.712,5.712,0,0,0,2.338,0c6.946-1.954,16.3-3.771,19.3-11.3,1.935-4.859,1.4-10.946,1.534-16.078A159.65,159.65,0,0,0,255.388,77.422Z" transform="translate(-212.105 -63.906)" fill="#ffb381"/>
+          </g>
+          <g id="Groupe_4" data-name="Groupe 4" transform="translate(0 26.088)">
+            <g id="Groupe_2" data-name="Groupe 2">
+              <path id="Tracé_3" data-name="Tracé 3" d="M214.916,113.551c-.032-.084-.026-.067,0,0Z" transform="translate(-205.473 -111.186)" fill="#ffb381"/>
+              <path id="Tracé_4" data-name="Tracé 4" d="M209.011,114.243a19.869,19.869,0,0,0-.927-1.962,4.713,4.713,0,0,1-.2-.452c.03.079.092.246.2.554q-.174-.461-.387-.9-1-1.313-.1-.107a3.966,3.966,0,0,0-2.813-1.657,3.68,3.68,0,0,0-.374-.125,4.5,4.5,0,0,0-4.453,1.51c-2.414,2.746-1.7,6.939.386,9.605a5.086,5.086,0,0,0,4,1.824,5.3,5.3,0,0,0,4.374-2.937A6.161,6.161,0,0,0,209.011,114.243Z" transform="translate(-198.442 -109.463)" fill="#ffb381"/>
+            </g>
+            <g id="Groupe_3" data-name="Groupe 3" transform="translate(48.675)">
+              <path id="Tracé_5" data-name="Tracé 5" d="M286.238,113.551c.033-.084.027-.067,0,0Z" transform="translate(-284.638 -111.186)" fill="#ffb381"/>
+              <path id="Tracé_6" data-name="Tracé 6" d="M284.208,119.59a5.3,5.3,0,0,0,4.374,2.937,5.083,5.083,0,0,0,4-1.824c2.088-2.666,2.8-6.859.386-9.605a4.5,4.5,0,0,0-4.453-1.51,3.718,3.718,0,0,0-.374.125,3.967,3.967,0,0,0-2.813,1.657q.906-1.205-.1.107-.215.443-.387.9c.111-.308.173-.475.2-.554a4.549,4.549,0,0,1-.2.452,19.61,19.61,0,0,0-.928,1.962A6.161,6.161,0,0,0,284.208,119.59Z" transform="translate(-283.443 -109.463)" fill="#ffb381"/>
+            </g>
+          </g>
+          <g id="Groupe_7" data-name="Groupe 7" transform="translate(16.291 28.304)">
+            <g id="Groupe_5" data-name="Groupe 5">
+              <ellipse id="Ellipse_1" data-name="Ellipse 1" cx="2.584" cy="4.104" rx="2.584" ry="4.104" fill="#3c1e05"/>
+            </g>
+            <g id="Groupe_6" data-name="Groupe 6" transform="translate(22.81)">
+              <path id="Tracé_7" data-name="Tracé 7" d="M271.893,117.437c0,2.267-1.157,4.1-2.584,4.1s-2.584-1.838-2.584-4.1,1.157-4.1,2.584-4.1S271.893,115.171,271.893,117.437Z" transform="translate(-266.725 -113.333)" fill="#3c1e05"/>
+            </g>
+          </g>
+        </g>
+        <path id="Tracé_8" data-name="Tracé 8" d="M248.742,60.9a24.833,24.833,0,0,0-7.725-6.585c-6.075-6.89-19.523-8.9-27.773-6.817a7.68,7.68,0,0,0-5.607,10.053,24.979,24.979,0,0,0-3.905,2.177c-4.917,3.367-8.211,10.494-2.011,14.586a12,12,0,0,0,1.429.8,39.261,39.261,0,0,0,2.225,10.893,2.154,2.154,0,0,0,4.15-1.144,41.765,41.765,0,0,1-.735-8.473c4.062.088,8.29-1.278,11.864-2.808a38.971,38.971,0,0,0,7.141-4.029,6.394,6.394,0,0,0,4.088,4.035c5.926,2.37,10.011-2.8,11.283-8.481.31.324.613.655.9.994,3.892,4.555,3.1,13.352,2.107,18.762a2.154,2.154,0,0,0,4.15,1.144C253.095,78.135,254.119,67.941,248.742,60.9Z" transform="translate(-194.241 -46.712)" fill="#6b3f1c"/>
+        <path id="Tracé_9" data-name="Tracé 9" d="M223.5,98.671c2.673-1.909,5.345-1.527,8.017-.381" transform="translate(-204.999 -68.346)" fill="none" stroke="#6b3f1c" stroke-miterlimit="10" stroke-width="1"/>
+        <path id="Tracé_10" data-name="Tracé 10" d="M271.189,97.671c-2.673-1.909-5.345-1.527-8.017-.381" transform="translate(-221.951 -67.919)" fill="none" stroke="#6b3f1c" stroke-miterlimit="10" stroke-width="1"/>
+        <path id="Tracé_11" data-name="Tracé 11" d="M244.585,106.5c3.436,4.295,6.013,12.312.286,15.748.859,1.145,2.577,2.863,4.3,3.15" transform="translate(-214.008 -72.263)" fill="none" stroke="#d1722e" stroke-miterlimit="10" stroke-width="1"/>
+        <g id="Groupe_10" data-name="Groupe 10" transform="translate(8.901 33.318)">
+          <g id="Groupe_9" data-name="Groupe 9" transform="translate(0 0)">
+            <circle id="Ellipse_2" data-name="Ellipse 2" cx="10.499" cy="10.499" r="10.499" transform="translate(0 20.71) rotate(-80.51)" fill="none" stroke="#6b3f1c" stroke-miterlimit="10" stroke-width="1"/>
+            <path id="Tracé_12" data-name="Tracé 12" d="M277.169,118.166a10.5,10.5,0,1,1-10.5-10.5A10.5,10.5,0,0,1,277.169,118.166Z" transform="translate(-227.861 -106.08)" fill="none" stroke="#6b3f1c" stroke-miterlimit="10" stroke-width="1"/>
+          </g>
+          <path id="Tracé_13" data-name="Tracé 13" d="M246.505,123.116s3.15-2,5.441.143" transform="translate(-223.73 -112.319)" fill="none" stroke="#6b3f1c" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+        <path id="Tracé_14" data-name="Tracé 14" d="M248.171,146.526A4.974,4.974,0,0,0,255.043,145" transform="translate(-215.54 -88.716)" fill="none" stroke="#895837" stroke-miterlimit="10" stroke-width="2"/>
+        <g id="Groupe_11" data-name="Groupe 11" transform="translate(0 76.04)">
+          <path id="Tracé_15" data-name="Tracé 15" d="M259.215,205.08a28.746,28.746,0,0,0-3.179-8.741c-1.922-3.675-3.957-6.349-7.08-7.881-7.31-3.588-15.22-4.831-22.823-6.56a11.025,11.025,0,0,0-1.865,0c-7.6,1.729-15.514,2.973-22.825,6.56-3.123,1.532-5.158,4.206-7.08,7.881a28.757,28.757,0,0,0-3.175,8.741Z" transform="translate(-191.189 -180.496)" fill="#8a827f"/>
+          <path id="Tracé_16" data-name="Tracé 16" d="M248.68,182.6a1.923,1.923,0,0,0-1.529-3.1H232.977a1.926,1.926,0,0,0-1.56,3.064c-1.9.423-3.794.872-5.679,1.392,1.725,4.963,7.59,8.618,14.562,8.618,6.892,0,12.7-3.572,14.5-8.447C252.771,183.55,250.725,183.06,248.68,182.6Z" transform="translate(-205.954 -179.5)" fill="#e5e5e5"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

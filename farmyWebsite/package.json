@@ -1,0 +1,15 @@
+{
+  "name": "farmy-website",
+  "version": "1.0.0",
+  "description": "landing page for farmy.ai organisation",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "landing",
+    "page"
+  ],
+  "author": "ilies boutouh , farmy.ai",
+  "license": "ISC"
+}
