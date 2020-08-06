@@ -581,7 +581,7 @@ body {
 /* Fonts */
 @font-face {
   font-family: Montserrat;
-  src: url(/assets/fonts/Montserrat-Medium.ttf) format("truetype");
+  src: url(assets/fonts/Montserrat-Medium.ttf) format("truetype");
   font-weight: 500;
   font-style: normal;
   font-stretch: normal;
@@ -589,7 +589,7 @@ body {
 
 @font-face {
   font-family: Montserrat;
-  src: url(/assets/fonts/Montserrat-SemiBold.ttf) format("truetype");
+  src: url(assets/fonts/Montserrat-SemiBold.ttf) format("truetype");
   font-weight: 600;
   font-style: normal;
   font-stretch: normal;
@@ -597,7 +597,7 @@ body {
 
 @font-face {
   font-family: Montserrat;
-  src: url(/assets/fonts/Montserrat-ExtraBold.ttf) format("truetype");
+  src: url(assets/fonts/Montserrat-ExtraBold.ttf) format("truetype");
   font-weight: 800;
   font-style: normal;
   font-stretch: normal;
@@ -605,7 +605,7 @@ body {
 
 @font-face {
   font-family: Poppins;
-  src: url(/assets/fonts/Poppins-Medium.ttf) format("truetype");
+  src: url(assets/fonts/Poppins-Medium.ttf) format("truetype");
   font-weight: 500;
   font-style: normal;
   font-stretch: normal;
@@ -613,7 +613,7 @@ body {
 
 @font-face {
   font-family: Poppins;
-  src: url(/assets/fonts/Poppins-SemiBold.ttf) format("truetype");
+  src: url(assets/fonts/Poppins-SemiBold.ttf) format("truetype");
   font-weight: 600;
   font-style: normal;
   font-stretch: normal;
@@ -621,7 +621,7 @@ body {
 
 @font-face {
   font-family: Poppins;
-  src: url(/assets/fonts/Poppins-Bold.ttf) format("truetype");
+  src: url(assets/fonts/Poppins-Bold.ttf) format("truetype");
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
