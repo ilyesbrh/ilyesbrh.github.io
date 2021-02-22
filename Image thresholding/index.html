@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Image thresholding</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+
+<body>
+    <input style="display: none;" type="file" name="" id="fileInput">
+    <div class="container">
+        <button class="btn" onclick="document.getElementById('fileInput').click()">Select File</button>
+        <h2 class="header-1">Original image</h2>
+        <img class="img-1" alt="" id="image-org">
+        <h2 class="header-2">Red image</h2>
+        <img class="img-2" alt="" id="image-red">
+        <h2 class="header-3">Blue image</h2>
+        <img class="img-3" alt="" id="image-blue">
+        <h2 class="header-4">green image</h2>
+        <img class="img-4" alt="" id="image-green">
+        <h2 class="header-5">Threshold image</h2>
+        <img class="img-5" alt="" id="image-threshold">
+
+
+    </div>
+</body>
+<script async src='script.js'></script>
+
+</html>
