@@ -62,7 +62,7 @@ const work = [
     { link: 'https://expert.farmy.ai/', org: 'Farmy.ai', start: '2016', end: 'Now', title: 'Web platform', description: 'Created using Angular, Angular material & NGRX library' },
     { link: 'https://play.google.com/store/apps/details?id=ai.farmy.app', org: 'Farmy.ai', start: '2017', end: 'Now', title: 'Mobile application', description: 'Created using Angular and ionic' },
     { link: 'https://github.com/farmy-ai/covid-fighters', org: 'Covideep', start: '2020', end: '2020', title: 'Web application', description: 'Data collection and label tool for COVID-19 disease chest scans' },
-    { link: 'https://medicadz.herokuapp.com/', org: 'Spring school', start: '2020', end: '2020', title: 'Website', description: 'Website created for a spring school located at skikda, algeria' },
+    { link: 'https://springschoolskikda.github.io/', org: 'Spring school', start: '2020', end: '2020', title: 'Website', description: 'Website created for a spring school located at skikda, algeria' },
     { link: 'https://medicadz.herokuapp.com/', org: 'Medica DZ', start: '2018', end: '2018', title: 'Web application', description: 'The easiest way to lookup drug information' },
     { link: 'https://github.com/ilyesbrh/barber', org: 'Barber booking app', start: '2019', end: 'Now', title: 'Web application', description: 'Barbers appointment scheduling apps' },
     { link: 'https://github.com/ilyesbrh/Doctors-freelancing', org: 'Doctors booking app', start: '2020', end: '2020', title: 'Web application', description: 'Doctors appointment scheduling apps' },
