@@ -1,0 +1,45 @@
+.player {
+    position: absolute;
+    left: 0;
+    top: 0;
+    touch-action: none;
+    opacity: 1;
+    display: block;
+}
+
+.red .shape_1 {
+    fill: red;
+}
+
+.red .shape_2 {
+    fill: red;
+}
+
+.red .shape_3 {
+    fill: red;
+}
+
+.player-text {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    left: 35%;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+    font-size: 12px;
+    font-weight: 700;
+    transform: translate(-30%, 0);
+    width: fit-content;
+}
+
+.pos-text {
+    position: relative;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+    font-size: 16px;
+    font-weight: 700;
+    top: -40px;
+    left: 23px;
+    width: fit-content;
+    transform: translate(-50%,0);
+}
