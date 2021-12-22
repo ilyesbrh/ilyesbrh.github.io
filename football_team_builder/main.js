@@ -1,19 +1,18 @@
 const player = document.querySelectorAll('.player')[0];
 
 const players = [
-    { name: 'Z.Amine', number: 9, x: '55%', y: '50%', team: false },
-    { name: 'M.Nazim ', number: 7, x: '35%', y: '50%', team: false },
-    { name: 'B.ilies', number: 10, x: '46%', y: '65%', team: false },
+    { name: 'Z.Amine', number: 9, x: '55%', y: '60%', team: false },
+    { name: 'B.ilies', number: 10, x: '35%', y: '60%', team: false },
+    { name: 'M.Nazim ', number: 7, x: '0%', y: '50%', team: false },
     { name: 'M.khairdine', number: 4, x: '80%', y: '70%', team: false },
     { name: 'B.Iqbal', number: 3, x: '45%', y: '80%', team: false },
     { name: 'M.Yassine', number: 5, x: '10%', y: '70%', team: false },
 
-    { name: 'Z.Nadir', number: 5, x: '10%', y: '15%', team: true },
-    { name: 'A.Rafik', number: 4, x: '80%', y: '15%', team: true },
+    { name: 'Z.Nadir', number: 5, x: '10%', y: '25%', team: true },
+    { name: 'A.Rafik', number: 4, x: '80%', y: '25%', team: true },
     { name: 'A.Charef', number: 3, x: '45%', y: '10%', team: true },
-    { name: 'Invité 1', number: 8, x: '10%', y: '35%', team: true },
-    { name: 'D.Walid', number: 9, x: '80%', y: '35%', team: true },
-    { name: 'Invité 2', number: 10, x: '45%', y: '30%', team: true },
+    { name: 'Invité 1', number: 8, x: '45%', y: '25%', team: true },
+    { name: 'Invité 2', number: 10, x: '45%', y: '40%', team: true },
 ]
 
 players.map(v => {
