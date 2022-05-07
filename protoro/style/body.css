@@ -44,9 +44,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -272,9 +272,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -492,7 +492,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
-  margin-top: 32px;
+  margin-top: 102px;
 }
 
 .work .container .work-list .details a {
@@ -612,9 +612,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -691,7 +691,7 @@
 .location .container .content .title {
   font-weight: 700;
   font-size: 4rem;
-  line-height: 77px;
+  line-height: 6rem;
   letter-spacing: 0.02em;
   color: var(--white);
 }
@@ -715,9 +715,10 @@
 }
 
 .location .container .content .description {
-  margin: 52px 0;
+  margin-top: 32px;
+  margin-bottom: 62px;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 160%;
   color: var(--white);
 }

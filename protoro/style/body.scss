@@ -1,4 +1,4 @@
-@import './utils.scss';
+@import "./utils.scss";
 
 @mixin content-styling {
   position: relative;
@@ -271,7 +271,7 @@
 
         width: 100%;
 
-        margin-top: 32px;
+        margin-top: 102px;
 
         a {
           display: flex;
@@ -285,6 +285,7 @@
           color: var(--white);
 
           text-decoration: none;
+
         }
       }
     }
@@ -399,7 +400,7 @@
       .title {
         font-weight: 700;
         font-size: 4rem;
-        line-height: 77px;
+        line-height: 6rem;
         letter-spacing: 0.02em;
         color: var(--white);
       }
@@ -417,10 +418,11 @@
         opacity: 0.5;
       }
       .description {
-        margin: 52px 0;
+        margin-top: 32px;
+        margin-bottom: 62px;
 
         font-weight: 400;
-        font-size: 16px;
+        font-size: 1rem;
         line-height: 160%;
         color: var(--white);
       }
