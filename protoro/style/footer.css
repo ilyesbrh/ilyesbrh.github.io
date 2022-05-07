@@ -1,0 +1,284 @@
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 202, 97, 0.5);
+            box-shadow: 0 0 0 0 rgba(255, 202, 97, 0.5);
+  }
+  70% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 202, 97, 0);
+            box-shadow: 0 0 0 10px rgba(255, 202, 97, 0);
+  }
+  100% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 202, 97, 0);
+            box-shadow: 0 0 0 0 rgba(255, 202, 97, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 202, 97, 0.5);
+            box-shadow: 0 0 0 0 rgba(255, 202, 97, 0.5);
+  }
+  70% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 202, 97, 0);
+            box-shadow: 0 0 0 10px rgba(255, 202, 97, 0);
+  }
+  100% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 202, 97, 0);
+            box-shadow: 0 0 0 0 rgba(255, 202, 97, 0);
+  }
+}
+
+:root {
+  --width: 100%;
+  --primary-color: rgb(216, 48, 47);
+  --secondary-color: #fc7e7e;
+  --background: #0c0c0e;
+  --white: #ffffffef;
+  --gradian: linear-gradient(180deg, #e672e1 0%, #e86060 100%);
+  --separation-color: #741b1b;
+}
+
+/* Font */
+@font-face {
+  font-family: "Popins" !important;
+  src: url("../assets/font/Poppins-Bold.ttf") format("truetype"), url("../assets/font/Poppins-ExtraBold.ttf") format("truetype"), url("../assets/font/Poppins-Regular.ttf") format("truetype"), url("../assets/font/Poppins-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Segoe UI" !important;
+  src: url("../assets/font/Segoe UI.woff") format("woff"), url("../assets/font/Segoe UI Bold.woff") format("woff"), url("../assets/font/Segoe UI Bold Italic.woff") format("woff"), url("../assets/font/Segoe UI Italic.woff") format("woff");
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  min-height: 30vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e672e1), to(#e86060));
+  background: linear-gradient(180deg, #e672e1 0%, #e86060 100%);
+}
+
+.footer .container {
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.footer .container .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: calc(100% - 128px);
+  padding: 64px;
+}
+
+.footer .container .row:first-child {
+  padding-bottom: 0;
+}
+
+.footer .container .row:last-child {
+  padding-top: 0;
+}
+
+.footer .container .work-of-art {
+  width: 40vw;
+  height: auto;
+}
+
+.footer .container .contact-us {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 8px;
+  width: 25vw;
+}
+
+.footer .container .contact-us .title {
+  font-weight: 700;
+  font-size: 1.375rem;
+  line-height: 160%;
+  color: var(--white);
+  margin-top: 8px;
+}
+
+.footer .container .contact-us .contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px;
+}
+
+.footer .container .contact-us .contact span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--white);
+}
+
+.footer .container .contact-us .input-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 18px;
+  width: calc(100% - 36px);
+  background: #0c0c0e;
+  border-radius: 4px;
+}
+
+.footer .container .contact-us .input-container > input {
+  border: none;
+  outline: none;
+  background: none;
+  width: 100%;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 19px;
+  color: var(--white);
+}
+
+.footer .container .contact-us .input-container > button {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: none;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 19px;
+  color: var(--white);
+}
+
+.footer .container .contact-us .input-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #741b1b;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.footer .container .v-line {
+  width: 1px;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #741b1b;
+  -webkit-box-shadow: 0px 0px 12px 3px rgba(216, 48, 47, 0.5);
+          box-shadow: 0px 0px 12px 3px rgba(216, 48, 47, 0.5);
+}
+
+.footer .container .line {
+  margin: 4vh 0px;
+  width: 100%;
+  height: 1px;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #741b1b;
+  -webkit-box-shadow: 0px 0px 12px 3px rgba(216, 48, 47, 0.5);
+          box-shadow: 0px 0px 12px 3px rgba(216, 48, 47, 0.5);
+}
+
+.footer .container .brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 19px;
+}
+
+.footer .container .brand .separation {
+  width: 0px;
+  height: 30px;
+  border: 1px solid black;
+}
+
+.footer .container .brand .company-name {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--black);
+}
+
+.footer .container .socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px;
+}
+
+.footer .container .socials img {
+  cursor: pointer;
+}
+/*# sourceMappingURL=footer.css.map */

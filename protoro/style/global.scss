@@ -1,0 +1,28 @@
+:root {
+  --width: 100%;
+
+  --primary-color: rgb(216, 48, 47);
+  --secondary-color: #fc7e7e;
+  --background: #0c0c0e;
+  --white: #ffffffef;
+
+  --gradian: linear-gradient(180deg, #e672e1 0%, #e86060 100%);
+  --separation-color: #741b1b;
+}
+
+/* Font */
+
+@font-face {
+  font-family: "Popins" !important;
+  src: url("../assets/font/Poppins-Bold.ttf") format("truetype"),
+    url("../assets/font/Poppins-ExtraBold.ttf") format("truetype"),
+    url("../assets/font/Poppins-Regular.ttf") format("truetype"),
+    url("../assets/font/Poppins-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Segoe UI" !important;
+  src: url("../assets/font/Segoe\ UI.woff") format("woff"),
+    url("../assets/font/Segoe\ UI\ Bold.woff") format("woff"),
+    url("../assets/font/Segoe\ UI\ Bold\ Italic.woff") format("woff"),
+    url("../assets/font/Segoe\ UI\ Italic.woff") format("woff");
+}

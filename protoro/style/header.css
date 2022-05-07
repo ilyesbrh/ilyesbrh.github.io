@@ -1,0 +1,355 @@
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 202, 97, 0.5);
+            box-shadow: 0 0 0 0 rgba(255, 202, 97, 0.5);
+  }
+  70% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 202, 97, 0);
+            box-shadow: 0 0 0 10px rgba(255, 202, 97, 0);
+  }
+  100% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 202, 97, 0);
+            box-shadow: 0 0 0 0 rgba(255, 202, 97, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 202, 97, 0.5);
+            box-shadow: 0 0 0 0 rgba(255, 202, 97, 0.5);
+  }
+  70% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 202, 97, 0);
+            box-shadow: 0 0 0 10px rgba(255, 202, 97, 0);
+  }
+  100% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 202, 97, 0);
+            box-shadow: 0 0 0 0 rgba(255, 202, 97, 0);
+  }
+}
+
+:root {
+  --width: 100%;
+  --primary-color: rgb(216, 48, 47);
+  --secondary-color: #fc7e7e;
+  --background: #0c0c0e;
+  --white: #ffffffef;
+  --gradian: linear-gradient(180deg, #e672e1 0%, #e86060 100%);
+  --separation-color: #741b1b;
+}
+
+/* Font */
+@font-face {
+  font-family: "Popins" !important;
+  src: url("../assets/font/Poppins-Bold.ttf") format("truetype"), url("../assets/font/Poppins-ExtraBold.ttf") format("truetype"), url("../assets/font/Poppins-Regular.ttf") format("truetype"), url("../assets/font/Poppins-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Segoe UI" !important;
+  src: url("../assets/font/Segoe UI.woff") format("woff"), url("../assets/font/Segoe UI Bold.woff") format("woff"), url("../assets/font/Segoe UI Bold Italic.woff") format("woff"), url("../assets/font/Segoe UI Italic.woff") format("woff");
+}
+
+@-webkit-keyframes shadow-animation {
+  from {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  to {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+
+@keyframes shadow-animation {
+  from {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  to {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+
+/* LAYOUT */
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: calc(100% - 80px);
+  padding: 40px;
+}
+
+.header .brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 19px;
+}
+
+.header .brand .separation {
+  width: 0px;
+  height: 30px;
+  border: 1px solid #ffffff;
+}
+
+.header .brand .company-name {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--white);
+}
+
+.side-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100vh;
+  background-color: #111;
+  overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding-top: 60px;
+  z-index: 100;
+}
+
+.side-panel .dropdown {
+  width: 100%;
+}
+
+.side-panel a {
+  width: 80%;
+  padding: 32px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.side-panel a:hover {
+  color: #f1f1f1;
+}
+
+.side-panel .close {
+  position: absolute;
+  top: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  right: 25px;
+  font-size: 36px;
+}
+
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: calc(100vh - 140px);
+  max-width: 1400px;
+}
+
+.hero .container {
+  --intersection: 248px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-height: 100%;
+  margin-left: calc(var(--intersection) * -1);
+}
+
+.hero .container > .content {
+  position: relative;
+  left: var(--intersection);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 28px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  z-index: 2;
+}
+
+.hero .container > .content .title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  font-weight: 700;
+  font-size: 4.5rem;
+  line-height: 5.4rem;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  text-shadow: 0px 1px 4px var(--white-10);
+}
+
+.hero .container > .content .description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 160%;
+  color: var(--white);
+  text-shadow: 0px 1px 4px var(--white-10);
+}
+
+.hero .container > .content .description .line {
+  margin: 14px 0px;
+  min-width: 80px;
+  max-width: 80px;
+  height: 18px;
+  background: var(--secondary-color);
+  -webkit-box-shadow: 0px 0px 12px 3px rgba(216, 48, 47, 0.5);
+          box-shadow: 0px 0px 12px 3px rgba(216, 48, 47, 0.5);
+}
+
+.hero .container .picture-container {
+  --square: 45vw;
+  position: relative;
+  width: var(--square);
+  height: var(--square);
+  z-index: 1;
+}
+
+.hero .container .picture-container img {
+  position: absolute;
+  width: 100%;
+}
+
+.hero .container .picture-container .fill-container {
+  position: absolute;
+  width: var(--square);
+  height: var(--square);
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+}
+
+.hero .container .picture-container .fill-container.pic {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.hero .container .picture-container .fill-container.shadow {
+  -webkit-filter: blur(40px);
+          filter: blur(40px);
+  -webkit-animation: shadow-animation 2s linear infinite alternate;
+          animation: shadow-animation 2s linear infinite alternate;
+}
+
+.hero .container .tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 80px;
+  width: 166px;
+}
+
+.hero .container .tabs .tab {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--white);
+  opacity: 0.5;
+}
+
+.hero .container .tabs .tab.active {
+  font-weight: 700;
+  opacity: 1;
+}
+
+.hero .container .tabs .tab:nth-child(1) {
+  padding-left: 20px;
+}
+
+.hero .container .tabs .tab:nth-child(2) {
+  padding-left: 40px;
+}
+
+.hero .container .tabs .tab:nth-child(3) {
+  padding-left: 60px;
+}
+
+.hero .container .tabs .tab:nth-child(4) {
+  padding-left: 40px;
+}
+
+.hero .container .tabs .tab:nth-child(5) {
+  padding-left: 20px;
+}
+/*# sourceMappingURL=header.css.map */

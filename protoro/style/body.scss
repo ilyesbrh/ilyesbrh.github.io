@@ -1,0 +1,453 @@
+@import './utils.scss';
+
+@mixin content-styling {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  gap: 28px;
+
+  height: fit-content;
+  width: min-content;
+
+  z-index: 2;
+
+  .title {
+    flex: 1;
+    width: 100%;
+    min-width: max-content;
+
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 5.4rem;
+    letter-spacing: 0.02em;
+
+    color: var(--white);
+
+    text-shadow: 0px 1px 4px var(--white-10);
+  }
+  .description {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    .line {
+      margin: 14px 0px;
+
+      min-width: 80px;
+      max-width: 80px;
+      height: 4px;
+
+      background: var(--secondary-color);
+      box-shadow: 0px 0px 12px 3px rgba(216, 48, 47, 0.5);
+    }
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 160%;
+    color: var(--white);
+
+    text-shadow: 0px 1px 4px var(--white-10);
+  }
+}
+
+.services {
+  @include layout-bolierplat;
+
+  .container {
+    .content {
+      @include content-styling;
+    }
+
+    .accordion {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+
+      width: 100%;
+      max-width: 952px;
+    }
+    .item {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+
+      transition: all 1s;
+
+      width: calc(100% - 40px);
+      height: max-content;
+      max-height: 103px;
+
+      border-top: 1px solid #ffffff40;
+
+      padding: 40px 20px;
+
+      .background,
+      .description {
+        display: none;
+      }
+
+      .item-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        z-index: 2;
+        .title {
+          font-weight: 700;
+          font-size: 1.125rem;
+          line-height: 22px;
+
+          letter-spacing: 0.02em;
+
+          color: var(--white);
+        }
+      }
+
+      &:hover,
+      &:focus,
+      :focus-within {
+        padding: 80px 20px;
+
+        max-height: 600px;
+        .title {
+          color: var(--primary-color);
+        }
+        .expend-icon {
+          opacity: 0;
+        }
+        .background {
+          display: block;
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: 100%;
+          width: 100%;
+          z-index: 1;
+        }
+        .description {
+          display: block;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 160%;
+          letter-spacing: 0.02em;
+
+          color: var(--white);
+
+          width: 50%;
+          min-width: 380px;
+
+          margin-top: 16px;
+
+          z-index: 2;
+        }
+        &:after {
+          position: absolute;
+          content: "";
+          height: 100%;
+          width: 100%;
+          top: 0;
+          left: 0;
+          background: linear-gradient(
+            90deg,
+            #0a0a0b 0%,
+            rgba(10, 10, 11, 0.39) 120%
+          );
+
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
+
+.work {
+  @include layout-bolierplat;
+
+  .container {
+    .content {
+      @include content-styling();
+    }
+
+    .work-list {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+
+      width: 100%;
+      max-width: 952px;
+
+      .item {
+        display: grid;
+
+        grid-template-rows: repeat(3, min-content);
+        grid-template-columns: repeat(4, 1fr);
+
+        grid-template-areas:
+          "picture  picture  tags     tags     "
+          "picture  picture  tags     tags     "
+          "picture  picture  title    count    ";
+
+        &:nth-child(2n) {
+          grid-template-areas:
+            "tags     tags     picture  picture  "
+            "tags     tags     picture  picture  "
+            "title    count    picture  picture  ";
+        }
+
+        > *:not(img) {
+          padding: 40px;
+        }
+
+        .picture {
+          grid-area: picture;
+
+          width: 100%;
+        }
+        .tags {
+          grid-area: tags;
+
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+
+          justify-self: start;
+
+          gap: 12px;
+
+          * {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: var(--white);
+            opacity: 0.5;
+
+            text-transform: uppercase;
+          }
+        }
+        .title {
+          grid-area: title;
+
+          justify-self: start;
+          align-self: end;
+
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 160%;
+          color: var(--white);
+        }
+        .count {
+          grid-area: count;
+
+          justify-self: end;
+          align-self: end;
+
+          height: fit-content;
+
+          font-weight: 700;
+          font-size: 72px;
+          line-height: 70px;
+          text-align: right;
+          color: var(--white);
+          opacity: 0.5;
+        }
+      }
+
+      .details {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+
+        margin-top: 32px;
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 16px;
+
+          font-weight: 700;
+          font-size: 22px;
+          line-height: 27px;
+          color: var(--white);
+
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.newsline {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  max-width: 100%;
+  height: 400px;
+
+  padding-top: 102px;
+
+  overflow-x: hidden;
+
+  .scroll {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    div {
+      font-weight: 900;
+      font-size: 64px;
+      line-height: 75px;
+      text-transform: uppercase;
+      white-space: nowrap;
+
+      -webkit-text-stroke: 1px #ffffff;
+      color: #000;
+
+      animation: animate 40s -40s linear infinite;
+      will-change: transform;
+
+      &:nth-child(2) {
+        animation: animate2 40s -20s linear infinite;
+      }
+    }
+
+    &.reverse {
+      div {
+        animation-direction: reverse;
+      }
+    }
+
+    transform-origin: left center;
+    transform: rotate(354deg) translateY(100px);
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+.location {
+  @include layout-bolierplat();
+  position: relative;
+  max-width: unset;
+
+  margin-top: 168px;
+
+  .background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    filter: blur(60px);
+    opacity: 0.3;
+  }
+
+  .container {
+    align-items: center;
+    gap: 5.236vw;
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      width: 50%;
+
+      .line {
+        margin: 14px 0px;
+
+        min-width: 80px;
+        max-width: 80px;
+        height: 4px;
+
+        background: var(--secondary-color);
+        box-shadow: 0px 0px 12px 3px rgba(216, 48, 47, 0.5);
+      }
+      .title {
+        font-weight: 700;
+        font-size: 4rem;
+        line-height: 77px;
+        letter-spacing: 0.02em;
+        color: var(--white);
+      }
+      .sub-title {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 16px;
+
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 160%;
+        color: var(--white);
+
+        opacity: 0.5;
+      }
+      .description {
+        margin: 52px 0;
+
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 160%;
+        color: var(--white);
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 19px;
+
+        .separation {
+          width: 0px;
+          height: 30px;
+
+          border: 1px solid #ffffff;
+        }
+        .company-name {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 19px;
+          color: var(--white);
+        }
+      }
+    }
+
+    .image {
+      width: 50%;
+    }
+  }
+}

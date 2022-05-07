@@ -1,0 +1,112 @@
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 202, 97, 0.5);
+            box-shadow: 0 0 0 0 rgba(255, 202, 97, 0.5);
+  }
+  70% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 202, 97, 0);
+            box-shadow: 0 0 0 10px rgba(255, 202, 97, 0);
+  }
+  100% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 202, 97, 0);
+            box-shadow: 0 0 0 0 rgba(255, 202, 97, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 202, 97, 0.5);
+            box-shadow: 0 0 0 0 rgba(255, 202, 97, 0.5);
+  }
+  70% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 202, 97, 0);
+            box-shadow: 0 0 0 10px rgba(255, 202, 97, 0);
+  }
+  100% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 202, 97, 0);
+            box-shadow: 0 0 0 0 rgba(255, 202, 97, 0);
+  }
+}
+
+:root {
+  --width: 100%;
+  --primary-color: rgb(216, 48, 47);
+  --secondary-color: #fc7e7e;
+  --background: #0c0c0e;
+  --white: #ffffffef;
+  --gradian: linear-gradient(180deg, #e672e1 0%, #e86060 100%);
+  --separation-color: #741b1b;
+}
+
+/* Font */
+@font-face {
+  font-family: "Popins" !important;
+  src: url("../assets/font/Poppins-Bold.ttf") format("truetype"), url("../assets/font/Poppins-ExtraBold.ttf") format("truetype"), url("../assets/font/Poppins-Regular.ttf") format("truetype"), url("../assets/font/Poppins-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Segoe UI" !important;
+  src: url("../assets/font/Segoe UI.woff") format("woff"), url("../assets/font/Segoe UI Bold.woff") format("woff"), url("../assets/font/Segoe UI Bold Italic.woff") format("woff"), url("../assets/font/Segoe UI Italic.woff") format("woff");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* BODY styling */
+body {
+  font-family: "Segoe UI";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  margin: 0;
+  width: calc(100vw - (100vw - 100%));
+  min-height: 100vh;
+  background-color: var(--background);
+  scroll-behavior: smooth;
+}
+
+body * {
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  width: 0.3rem;
+  height: 0.3rem;
+  -webkit-box-shadow: 0px 0px 12px 3px rgba(216, 48, 47, 0.5);
+          box-shadow: 0px 0px 12px 3px rgba(216, 48, 47, 0.5);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  -webkit-box-shadow: 0px 0px 12px 3px rgba(216, 48, 47, 0.5);
+          box-shadow: 0px 0px 12px 3px rgba(216, 48, 47, 0.5);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--background);
+  -webkit-box-shadow: 0px 0px 12px 3px rgba(216, 48, 47, 0.5);
+          box-shadow: 0px 0px 12px 3px rgba(216, 48, 47, 0.5);
+}
+/*# sourceMappingURL=main.css.map */

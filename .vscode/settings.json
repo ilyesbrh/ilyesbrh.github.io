@@ -3,5 +3,10 @@
         "Treant",
         "clustal",
         "indel"
-    ]
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#392B05",
+        "titleBar.activeBackground": "#503D07",
+        "titleBar.activeForeground": "#FDF9EE"
+    }
 }

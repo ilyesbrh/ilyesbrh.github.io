@@ -1,0 +1,68 @@
+//helpers
+@mixin layout-bolierplat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: calc(100vh - 140px);
+
+  max-width: 1400px;
+
+  > .container {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    width: 100%;
+    max-width: 1400px;
+    min-height: 100%;
+
+    padding-top: 102px;
+  }
+}
+
+@mixin layout($type: row) {
+  display: flex;
+
+  @if $type == column {
+    flex-direction: column;
+  }
+
+  align-items: center;
+  justify-content: center;
+  @content;
+}
+
+@mixin spacing($property, $y: 0, $bottom: $y, $x: 0, $right: $x) {
+  #{$property}-top: $y;
+  #{$property}-bottom: $bottom;
+  #{$property}-left: $x;
+  #{$property}-right: $right;
+}
+
+@mixin random-background() {
+  background-color: rgb(random(255), random(255), random(255));
+
+  min-height: 120px;
+  width: 100%;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 202, 97, 0.5);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(255, 202, 97, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 202, 97, 0);
+  }
+}

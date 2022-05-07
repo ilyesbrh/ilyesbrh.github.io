@@ -1,0 +1,46 @@
+@import "./utils.scss";
+@import "./global.scss";
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* BODY styling */
+body {
+  font-family: "Segoe UI";
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 0;
+  margin: 0;
+
+  width: calc(100vw - (100vw - 100%));
+  min-height: 100vh;
+
+  background-color: var(--background);
+
+  scroll-behavior: smooth;
+  * {
+    scroll-behavior: smooth;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0.3rem;
+    height: 0.3rem;
+    box-shadow: 0px 0px 12px 3px rgba(216, 48, 47, 0.5);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    box-shadow: 0px 0px 12px 3px rgba(216, 48, 47, 0.5);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--background);
+    box-shadow: 0px 0px 12px 3px rgba(216, 48, 47, 0.5);
+  }
+}
