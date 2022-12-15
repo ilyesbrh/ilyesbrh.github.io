@@ -1,5 +1,5 @@
 
-const fourthOfJuly = new Date(2020, 0, 0).getTime();
+const fourthOfJuly = new Date(2022, 11, 16).getTime();
 
 // countdown
 var timer = setInterval(function () {
@@ -32,7 +32,7 @@ var timer = setInterval(function () {
         clearInterval(timer);
         document.body.innerHTML = 
             '<div class="container - fluid"> ' +
-                '<a href="https://happybirthdaydooo.github.io"  role="button"><button class="button center">See your Gift</button></a> ' +
+                '<a href="https://ilyesbrh.github.io/fadiaBirthday/index.html"  role="button"><button class="button center">Ouvrir</button></a> ' +
             '</div> ';
     }
 
